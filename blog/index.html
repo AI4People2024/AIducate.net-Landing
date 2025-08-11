@@ -1,1 +1,232 @@
-Trang của các bài viết blog
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog Học tập & Phát triển – Aiducate.net</title>
+  <link rel="icon" href="../favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0f1c2e; --ink:#ffffff; --brand:#2b93e4; --accent:#4bc0c8; --card:#15243b; --muted:#d0e4ff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
+    a{color:inherit;text-decoration:none}
+    .container{width:92%;max-width:1180px;margin:auto}
+    header{padding:40px 0 20px;text-align:center}
+    header img{width:120px;height:120px;object-fit:contain;opacity:.95}
+    h1{margin:10px 0 6px;font-size:32px;color:var(--brand)}
+    .lead{color:var(--muted);max-width:900px;margin:0 auto 10px}
+    .hero-img{width:100%;max-width:960px;margin:18px auto;border-radius:14px;display:block}
+
+    /* section meta */
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:26px 0 10px}
+    .section-head h2{margin:0;color:var(--accent);font-size:26px}
+    .section-head p{margin:0;color:var(--muted)}
+    .see-all{background:transparent;border:1px solid rgba(255,255,255,.2);padding:8px 12px;border-radius:10px;font-weight:600}
+    .see-all:hover{background:rgba(255,255,255,.06)}
+
+    /* article grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+    .thumb{aspect-ratio:16/9;background:#0e1a2c url('../images/blog-placeholder.jpg') center/cover no-repeat}
+    .content{padding:14px}
+    .tag{display:inline-block;font-size:12px;background:rgba(43,147,228,.18);color:#9ed6ff;padding:4px 8px;border-radius:999px;margin-bottom:8px}
+    .title{font-weight:700;margin:4px 0 6px;line-height:1.4}
+    .meta{opacity:.7;font-size:13px}
+    .excerpt{color:var(--muted);margin:8px 0 10px;font-size:15px}
+    .readmore{margin-top:auto;padding:12px 14px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center}
+    .readmore a{color:#9ed6ff;font-weight:600}
+    .readmore span{opacity:.6;font-size:13px}
+
+    /* utility */
+    .spacer{height:8px}
+    footer{margin:34px 0 22px;opacity:.7;font-size:14px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="../logo.png" alt="Aiducate Logo">
+      <h1>Blog Học tập & Phát triển</h1>
+      <p class="lead">Chuyên trang bài viết chất lượng dành cho sinh viên: kỹ năng viết luận đạt điểm cao, định hướng nghề nghiệp, khởi nghiệp – kiếm tiền, và góc giải trí – du lịch để cân bằng cuộc sống.</p>
+      <img class="hero-img" src="../images/blog-hero.jpg" alt="Hình minh họa Blog Aiducate.net">
+    </header>
+
+    <!-- 1) Viết luận hiệu quả -->
+    <div class="section-head">
+      <div>
+        <h2>✍️ Viết luận đạt điểm cao</h2>
+        <p>Phương pháp – tiêu chí chấm điểm – lỗi cần tránh – cách ứng dụng AI an toàn</p>
+      </div>
+      <a class="see-all" href="./essay.html">Xem tất cả</a>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/essay-1.jpg')"></div>
+        <div class="content">
+          <span class="tag">Essay</span>
+          <div class="title"><a href="./essay.html">Vì sao viết bài luận là “ác mộng” và cách thoát nhanh trong 30 phút</a></div>
+          <div class="meta">5 phút đọc • 2025-08-10</div>
+          <p class="excerpt">Bắt đầu từ dàn ý đúng, áp dụng checklist chấm điểm, và dùng AI như một trợ giảng thay vì “máy viết hộ”.</p>
+        </div>
+        <div class="readmore"><a href="./essay.html">Đọc tiếp →</a><span>Hướng dẫn</span></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/essay-2.jpg')"></div>
+        <div class="content">
+          <span class="tag">Essay</span>
+          <div class="title"><a href="./essay.html">Checklist 10 bước trước khi nộp bài luận</a></div>
+          <div class="meta">4 phút đọc • 2025-08-05</div>
+          <p class="excerpt">Từ cấu trúc – lập luận – dẫn chứng – ngữ pháp – đạo văn. Tải checklist và áp dụng ngay.</p>
+        </div>
+        <div class="readmore"><a href="./essay.html">Đọc tiếp →</a><span>Checklist</span></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/essay-3.jpg')"></div>
+        <div class="content">
+          <span class="tag">Essay</span>
+          <div class="title"><a href="./essay.html">So sánh: Viết thủ công vs. Viết có hỗ trợ AI</a></div>
+          <div class="meta">6 phút đọc • 2025-08-01</div>
+          <p class="excerpt">Kết hợp AI đúng cách để tăng chất lượng, tiết kiệm thời gian mà vẫn giữ dấu ấn cá nhân.</p>
+        </div>
+        <div class="readmore"><a href="./essay.html">Đọc tiếp →</a><span>So sánh</span></div>
+      </article>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- 2) Chọn nghề – Hướng nghiệp -->
+    <div class="section-head">
+      <div>
+        <h2>🧭 Chọn nghề – Hướng nghiệp</h2>
+        <p>Test tính cách – đa thông minh, khớp ngành – nghề, lộ trình kỹ năng</p>
+      </div>
+      <a class="see-all" href="./career.html">Xem tất cả</a>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/career-1.jpg')"></div>
+        <div class="content">
+          <span class="tag">Career</span>
+          <div class="title"><a href="./career.html">3 bước chọn ngành đúng với tính cách & thế mạnh</a></div>
+          <div class="meta">5 phút đọc • 2025-07-28</div>
+          <p class="excerpt">Kết hợp test đa thông minh, MBTI và dữ liệu việc làm để ra quyết định ít hối tiếc.</p>
+        </div>
+        <div class="readmore"><a href="./career.html">Đọc tiếp →</a><span>Định hướng</span></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/career-2.jpg')"></div>
+        <div class="content">
+          <span class="tag">Career</span>
+          <div class="title"><a href="./career.html">Làm test ở đâu? Cách đọc kết quả để áp dụng thật</a></div>
+          <div class="meta">4 phút đọc • 2025-07-20</div>
+          <p class="excerpt">Không dừng ở điểm số—học cách chuyển kết quả test thành lựa chọn môn học & hoạt động.</p>
+        </div>
+        <div class="readmore"><a href="./career.html">Đọc tiếp →</a><span>Test</span></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/career-3.jpg')"></div>
+        <div class="content">
+          <span class="tag">Career</span>
+          <div class="title"><a href="./career.html">Từ định hướng → thực tập: Checklist chuẩn bị</a></div>
+          <div class="meta">6 phút đọc • 2025-07-12</div>
+          <p class="excerpt">Lộ trình CV – kỹ năng – portfolio – mạng lưới – phỏng vấn dành cho năm 3–4.</p>
+        </div>
+        <div class="readmore"><a href="./career.html">Đọc tiếp →</a><span>Lộ trình</span></div>
+      </article>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- 3) Khởi nghiệp – Kiếm tiền -->
+    <div class="section-head">
+      <div>
+        <h2>💡 Khởi nghiệp & Kiếm tiền</h2>
+        <p>Ý tưởng, kỹ năng freelance, tối ưu thời gian – thu nhập khi còn đi học</p>
+      </div>
+      <a class="see-all" href="./startup-money.html">Xem tất cả</a>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-1.jpg')"></div>
+        <div class="content">
+          <span class="tag">Money</span>
+          <div class="title"><a href="./startup-money.html">5 cách kiếm tiền hợp pháp & an toàn cho sinh viên</a></div>
+          <div class="meta">4 phút đọc • 2025-07-05</div>
+          <p class="excerpt">Gia sư thông minh, cộng tác nội dung, dịch thuật, thiết kế, trợ lý AI… bắt đầu sao cho đúng.</p>
+        </div>
+        <div class="readmore"><a href="./startup-money.html">Đọc tiếp →</a><span>Gợi ý</span></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-2.jpg')"></div>
+        <div class="content">
+          <span class="tag">Startup</span>
+          <div class="title"><a href="./startup-money.html">Bắt đầu side project: 0 → 1</a></div>
+          <div class="meta">6 phút đọc • 2025-06-28</div>
+          <p class="excerpt">Chọn vấn đề nhỏ, MVP nhanh, đo lường thật—những nguyên tắc “khởi nghiệp tinh gọn”.</p>
+        </div>
+        <div class="readmore"><a href="./startup-money.html">Đọc tiếp →</a><span>MVP</span></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-3.jpg')"></div>
+        <div class="content">
+          <span class="tag">Career</span>
+          <div class="title"><a href="./startup-money.html">Nghệ thuật thương lượng lương cho thực tập</a></div>
+          <div class="meta">5 phút đọc • 2025-06-18</div>
+          <p class="excerpt">Nghiên cứu thị trường lương, định vị kỹ năng, cách nói con số tự tin nhưng tôn trọng.</p>
+        </div>
+        <div class="readmore"><a href="./startup-money.html">Đọc tiếp →</a><span>Kỹ năng</span></div>
+      </article>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- 4) Giải trí – Du lịch -->
+    <div class="section-head">
+      <div>
+        <h2>🌿 Giải trí & Du lịch</h2>
+        <p>Góc thư giãn – cân bằng cuộc sống sinh viên để học tốt hơn</p>
+      </div>
+      <a class="see-all" href="./life.html">Xem tất cả</a>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/life-1.jpg')"></div>
+        <div class="content">
+          <span class="tag">Lifestyle</span>
+          <div class="title"><a href="./life.html">Cuối tuần detox số: 5 thói quen nạp lại năng lượng</a></div>
+          <div class="meta">3 phút đọc • 2025-06-10</div>
+          <p class="excerpt">Đi bộ ngắn, đọc 20 phút, gặp bạn thân, ngủ đủ giấc—những điều nhỏ tạo khác biệt lớn.</p>
+        </div>
+        <div class="readmore"><a href="./life.html">Đọc tiếp →</a><span>Sức khỏe</span></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/life-2.jpg')"></div>
+        <div class="content">
+          <span class="tag">Travel</span>
+          <div class="title"><a href="./life.html">Đi gần – vui nhiều: 7 điểm “xả stress” quanh thành phố</a></div>
+          <div class="meta">4 phút đọc • 2025-05-30</div>
+          <p class="excerpt">Budget-friendly, di chuyển nhanh, cảnh đẹp—lịch trình 1 ngày cho nhóm bạn sinh viên.</p>
+        </div>
+        <div class="readmore"><a href="./life.html">Đọc tiếp →</a><span>Gợi ý</span></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/life-3.jpg')"></div>
+        <div class="content">
+          <span class="tag">Mindset</span>
+          <div class="title"><a href="./life.html">Học cách nghỉ ngơi—để học tốt hơn</a></div>
+          <div class="meta">3 phút đọc • 2025-05-22</div>
+          <p class="excerpt">Pomodoro, nghỉ chủ động, chuyển bối cảnh—mẹo nhỏ giúp não “reset” nhanh.</p>
+        </div>
+        <div class="readmore"><a href="./life.html">Đọc tiếp →</a><span>Thói quen</span></div>
+      </article>
+    </div>
+
+    <footer>
+      © Aiducate.net • “Bình dân học vụ AI” • <a href="../legal/privacy.html">Chính sách bảo mật</a> • <a href="../legal/terms.html">Điều khoản</a>
+    </footer>
+  </div>
+</body>
+</html>
