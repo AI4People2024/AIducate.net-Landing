@@ -1,1 +1,185 @@
-Các bài viết về khởi nghiệp và kiếm tiền
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Khởi nghiệp & Kiếm tiền – Aiducate.net</title>
+  <link rel="icon" href="../favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0f1c2e; --ink:#ffffff; --brand:#2b93e4; --accent:#4bc0c8; --card:#15243b; --muted:#d0e4ff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
+    a{color:inherit;text-decoration:none}
+    .container{width:92%;max-width:1180px;margin:auto}
+    header{padding:40px 0 20px;text-align:center}
+    header img{width:120px;height:120px;object-fit:contain;opacity:.95}
+    h1{margin:10px 0 6px;font-size:32px;color:var(--brand)}
+    .lead{color:var(--muted);max-width:900px;margin:0 auto 10px}
+    .hero-img{width:100%;max-width:960px;margin:18px auto;border-radius:14px;display:block}
+
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:26px 0 10px}
+    .section-head h2{margin:0;color:var(--accent);font-size:26px}
+    .section-head p{margin:0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+    .thumb{aspect-ratio:16/9;background:#0e1a2c url('../images/money-placeholder.jpg') center/cover no-repeat}
+    .content{padding:14px}
+    .tag{display:inline-block;font-size:12px;background:rgba(43,147,228,.18);color:#9ed6ff;padding:4px 8px;border-radius:999px;margin-bottom:8px}
+    .title{font-weight:700;margin:4px 0 6px;line-height:1.4}
+    .meta{opacity:.7;font-size:13px}
+    .excerpt{color:var(--muted);margin:8px 0 10px;font-size:15px}
+    .readmore{margin-top:auto;padding:12px 14px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center}
+    .readmore a{color:#9ed6ff;font-weight:600}
+    .readmore span{opacity:.6;font-size:13px}
+
+    footer{margin:34px 0 22px;opacity:.7;font-size:14px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="../logo.png" alt="Aiducate Logo">
+      <h1>Khởi nghiệp & Kiếm tiền</h1>
+      <p class="lead">Ý tưởng, kỹ năng freelance, kinh nghiệm làm thêm an toàn – giúp sinh viên tăng thu nhập và tích lũy trải nghiệm nghề nghiệp, không đánh đổi kết quả học tập.</p>
+      <img class="hero-img" src="../images/money-hero.jpg" alt="Khởi nghiệp & Kiếm tiền cho sinh viên">
+    </header>
+
+    <div class="section-head">
+      <div>
+        <h2>Danh mục bài viết</h2>
+        <p>Chọn việc thông minh – làm thật, học thật, thu nhập thật</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- 1 -->
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-when-to-start.jpg')"></div>
+        <div class="content">
+          <span class="tag">Money</span>
+          <div class="title"><a href="#">Sinh viên nên bắt đầu kiếm tiền từ khi nào?</a></div>
+          <div class="meta">5 phút đọc • 2025-08-10</div>
+          <p class="excerpt">Thời điểm lý tưởng để đi làm thêm? Dấu hiệu đã sẵn sàng, lợi ích thật sự, và checklist chuẩn bị để không ảnh hưởng việc học.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Hướng dẫn</span></div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-smart-parttime.jpg')"></div>
+        <div class="content">
+          <span class="tag">Career</span>
+          <div class="title"><a href="#">Làm thêm thông minh: Làm để học, không chỉ để kiếm tiền</a></div>
+          <div class="meta">6 phút đọc • 2025-08-08</div>
+          <p class="excerpt">Chọn công việc giúp phát triển kỹ năng: giao tiếp, bán hàng, content, data, quản lý thời gian – nâng hồ sơ chứ không “đốt” thời gian.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Tư duy</span></div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-top5-jobs.jpg')"></div>
+        <div class="content">
+          <span class="tag">Guide</span>
+          <div class="title"><a href="#">Top 5 công việc làm thêm phù hợp cho sinh viên</a></div>
+          <div class="meta">4 phút đọc • 2025-08-05</div>
+          <p class="excerpt">Gia sư, bán hàng online, phục vụ quán cà phê, viết content, thực tập sinh: bắt đầu thế nào, cần kỹ năng gì, thu nhập tham khảo.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Gợi ý</span></div>
+      </article>
+
+      <!-- 4 -->
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-freelance-zero.jpg')"></div>
+        <div class="content">
+          <span class="tag">Freelance</span>
+          <div class="title"><a href="#">Freelancer từ con số 0: Hướng dẫn cho sinh viên Việt</a></div>
+          <div class="meta">7 phút đọc • 2025-08-03</div>
+          <p class="excerpt">Bắt đầu từ viết content, thiết kế Canva, dịch thuật. Cách tạo profile, nhận job trên VLance, Upwork và chiến lược giữ khách.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Lộ trình</span></div>
+      </article>
+
+      <!-- 5 -->
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-tutor-online.jpg')"></div>
+        <div class="content">
+          <span class="tag">Tutor</span>
+          <div class="title"><a href="#">Gia sư online: Nghề tay trái ổn định</a></div>
+          <div class="meta">5 phút đọc • 2025-08-01</div>
+          <p class="excerpt">Tìm học sinh ở đâu, set lịch & lớp online, tài liệu dạy, và cách xây dựng uy tín để có học viên đều đặn.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Thực hành</span></div>
+      </article>
+
+      <!-- 6 -->
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-affiliate.jpg')"></div>
+        <div class="content">
+          <span class="tag">Affiliate</span>
+          <div class="title"><a href="#">Affiliate Marketing: Kiếm tiền từ link giới thiệu</a></div>
+          <div class="meta">6 phút đọc • 2025-07-28</div>
+          <p class="excerpt">Bắt đầu với Shopee, Lazada, TikTok Shop: chọn ngách, làm nội dung ngắn, tối ưu link, nguyên tắc minh bạch & đạo đức.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Thực chiến</span></div>
+      </article>
+
+      <!-- 7 -->
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-balance.jpg')"></div>
+        <div class="content">
+          <span class="tag">Life</span>
+          <div class="title"><a href="#">Cân bằng học – làm – chơi: Bí kíp sống sót ở đại học</a></div>
+          <div class="meta">4 phút đọc • 2025-07-25</div>
+          <p class="excerpt">Quản lý thời gian theo khung 3 khối, kỹ thuật Pomodoro, checklist mỗi tuần và mẹo bảo vệ sức khỏe tinh thần.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Thói quen</span></div>
+      </article>
+
+      <!-- 8 -->
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-scam.jpg')"></div>
+        <div class="content">
+          <span class="tag">Safety</span>
+          <div class="title"><a href="#">5 dấu hiệu công việc làm thêm lừa đảo</a></div>
+          <div class="meta">3 phút đọc • 2025-07-20</div>
+          <p class="excerpt">Thu phí trước, thu nhập “khủng”, hợp đồng mập mờ, yêu cầu giao nộp giấy tờ cá nhân—cách báo cáo & tránh rủi ro.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Cảnh giác</span></div>
+      </article>
+
+      <!-- 9 -->
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-budget.jpg')"></div>
+        <div class="content">
+          <span class="tag">Finance</span>
+          <div class="title"><a href="#">Quản lý tài chính cá nhân: Chi tiêu thông minh khi làm thêm</a></div>
+          <div class="meta">5 phút đọc • 2025-07-16</div>
+          <p class="excerpt">Quy tắc 50-30-20, theo dõi chi tiêu, lập quỹ dự phòng, và app quản lý tiền đơn giản cho sinh viên.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Kỷ luật</span></div>
+      </article>
+
+      <!-- 10 -->
+      <article class="card">
+        <div class="thumb" style="background-image:url('../images/money-alumni-share.jpg')"></div>
+        <div class="content">
+          <span class="tag">Story</span>
+          <div class="title"><a href="#">Làm thêm có giúp ích cho tương lai? Chia sẻ từ người đi trước</a></div>
+          <div class="meta">6 phút đọc • 2025-07-10</div>
+          <p class="excerpt">Câu chuyện thật về kỹ năng, network, cơ hội thực tập – vì sao “làm thêm đúng” là bước đệm cho sự nghiệp.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Kinh nghiệm</span></div>
+      </article>
+    </div>
+
+    <footer>
+      © Aiducate.net • “Bình dân học vụ AI” • <a href="../legal/privacy.html">Chính sách bảo mật</a> • <a href="../legal/terms.html">Điều khoản</a>
+    </footer>
+  </div>
+</body>
+</html>
