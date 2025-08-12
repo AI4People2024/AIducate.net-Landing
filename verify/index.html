@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Tra cứu chứng nhận số (PDF) – Aiducate.net</title>
+  <title>Tra cứu chứng nhận số – Aiducate.net</title>
   <link rel="icon" href="../favicon.ico"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
@@ -28,9 +28,6 @@
     .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.25)}
     .btn:disabled{opacity:.6;cursor:not-allowed}
     .status{margin-top:10px;font-size:14px;color:var(--muted)}
-    .hr{height:1px;background:rgba(255,255,255,.08);margin:16px 0}
-    h2{color:var(--accent);font-size:22px;margin:8px 0}
-    ul{margin:6px 0 0 18px;color:var(--muted)}
     footer{margin:28px 0 10px;text-align:center;opacity:.7;font-size:14px}
     code{background:rgba(255,255,255,.08);padding:0 6px;border-radius:6px}
   </style>
@@ -39,34 +36,26 @@
   <div class="container">
     <header>
       <a href="/"><img src="../logo.png" alt="Aiducate.net Logo"></a>
-      <h1>Tra cứu Chứng nhận số (PDF)</h1>
+      <h1>Tra cứu chứng nhận số kinh nghiệm làm việc, thực tập cho sinh viên</h1>
       <p class="lead">
-        Nhập <strong>Mã chứng chỉ</strong> (ví dụ: <code>AID_1AS_2025_001</code>) để mở <em>chứng chỉ PDF</em> và <em>PDF kết quả thực tập</em>.
+        Nhập <strong>Mã chứng nhận</strong> (ví dụ: <code>AID_1AS_2025_001</code>) để mở <em>PDF chứng nhận</em> và <em>PDF kết quả thực tập</em>.
       </p>
     </header>
 
     <section class="card">
       <div class="row">
         <div>
-          <label for="code">Mã chứng chỉ</label>
+          <label for="code">Mã chứng nhận</label>
           <input id="code" type="text" placeholder="VD: AID_1AS_2025_001" autocomplete="off"/>
           <div class="status" id="status">
             Gợi ý: có thể truy cập dạng <code>?code=AID_1AS_2025_001</code> để tự điền mã.
           </div>
         </div>
         <div class="actions" style="align-self:end;justify-content:flex-end">
-          <button class="btn" id="viewCert">Xem chứng chỉ (PDF)</button>
-          <button class="btn secondary" id="viewPdf">Xem kết quả (PDF)</button>
+          <button class="btn" id="viewCert">Xem chứng nhận (PDF)</button>
+          <button class="btn secondary" id="viewPdf">Xem kết quả thực tập (PDF)</button>
         </div>
       </div>
-
-      <div class="hr"></div>
-      <h2>Quy ước lưu trữ (GitHub Pages)</h2>
-      <ul>
-        <li>Chứng chỉ: <code>/verify/certs/cert_&lt;MÃ&gt;.pdf</code></li>
-        <li>Kết quả: <code>/verify/certs/resu_&lt;MÃ&gt;.pdf</code></li>
-      </ul>
-      <p class="status">Ví dụ: với mã <code>AID_1AS_2025_001</code> → <code>/verify/certs/cert_AID_1AS_2025_001.pdf</code></p>
     </section>
 
     <footer>© Aiducate.net • “Bình dân học vụ AI” • <a href="/">Trang chủ</a></footer>
@@ -78,7 +67,7 @@
     const btnCert = document.getElementById('viewCert');
     const btnPdf  = document.getElementById('viewPdf');
 
-    // Lấy code từ query (?code=...)
+    // Prefill từ query (?code=...)
     const params = new URLSearchParams(location.search);
     const qCode = params.get('code');
     if (qCode) elCode.value = qCode.trim();
@@ -105,17 +94,19 @@
     async function openPdf(which){
       const code = getCode();
       if(!code){
-        elStatus.textContent = "Vui lòng nhập Mã chứng chỉ (ví dụ: AID_1AS_2025_001).";
+        elStatus.textContent = "Vui lòng nhập Mã chứng nhận (ví dụ: AID_1AS_2025_001).";
         return;
       }
       elStatus.textContent = "Đang kiểm tra tệp…";
 
-      const paths = buildPaths(code);
-      const url = which === 'cert' ? paths.cert : paths.resu;
+      const {cert, resu} = buildPaths(code);
+      const url = which === 'cert' ? cert : resu;
 
       const ok = await exists(url);
       if(!ok){
-        elStatus.textContent = "Không tìm thấy tệp PDF. Vui lòng kiểm tra lại mã hoặc thử lại sau.";
+        // Chuyển sang trang lỗi đẹp, giữ lại mã để hiển thị
+        const qs = new URLSearchParams({code}).toString();
+        location.href = `./notfound.html?${qs}`;
         return;
       }
 
@@ -125,11 +116,7 @@
 
     btnCert.addEventListener('click', ()=>openPdf('cert'));
     btnPdf .addEventListener('click', ()=>openPdf('resu'));
-
-    // Enter để mở chứng chỉ
-    elCode.addEventListener('keydown', (e)=>{
-      if(e.key === 'Enter'){ openPdf('cert'); }
-    });
+    elCode.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ openPdf('cert'); }});
   </script>
 </body>
 </html>
