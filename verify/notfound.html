@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Không tìm thấy chứng nhận – Aiducate.net</title>
+  <link rel="icon" href="../favicon.ico"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#0f1c2e; --ink:#ffffff; --brand:#2b93e4; --accent:#4bc0c8; --card:#15243b; --muted:#d0e4ff; --danger:#ff7a7a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
+    a{color:inherit;text-decoration:none}
+    .container{width:92%;max-width:820px;margin:auto;padding:28px}
+    header{text-align:center;margin:6px 0 18px}
+    header img{width:120px;height:120px;object-fit:contain;opacity:.95}
+    h1{margin:.3rem 0;font-size:30px;color:var(--brand)}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;margin-top:18px}
+    .alert{display:flex;gap:10px;align-items:flex-start;background:rgba(255,122,122,.08);border:1px solid rgba(255,122,122,.35);color:#ffd1d1;border-radius:12px;padding:14px}
+    .code{font-weight:700;color:#fff;background:rgba(255,255,255,.1);padding:2px 8px;border-radius:8px}
+    h2{color:var(--accent);font-size:22px;margin:14px 0 6px}
+    ul{margin:6px 0 0 18px;color:var(--muted)}
+    label{display:block;font-weight:600;margin:12px 0 6px}
+    input[type=text]{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0e1a2c;color:#fff;font-size:16px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{display:inline-block;background:var(--brand);padding:12px 16px;border:none;border-radius:10px;color:#fff;font-weight:700;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.25)}
+    .btn.link{background:transparent;border:0;text-decoration:underline}
+    footer{margin:28px 0 10px;text-align:center;opacity:.7;font-size:14px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/"><img src="../logo.png" alt="Aiducate.net Logo"></a>
+      <h1>Không tìm thấy chứng nhận</h1>
+    </header>
+
+    <section class="card">
+      <div class="alert">
+        <div>⚠️</div>
+        <div>
+          <strong>Rất tiếc, hệ thống chưa tìm thấy chứng nhận với mã: <span class="code" id="codeView">—</span></strong>
+          <div style="font-size:14px;color:#d0e4ff;margin-top:4px">Vui lòng kiểm tra lại mã hoặc thử nhập lại bên dưới.</div>
+        </div>
+      </div>
+
+      <h2>Nguyên nhân thường gặp</h2>
+      <ul>
+        <li>Nhập sai ký tự (ví dụ nhầm số 0 với chữ O, dấu gạch dưới “_”, …)</li>
+        <li>Chứng nhận chưa được đồng bộ lên hệ thống</li>
+        <li>Đường dẫn PDF bị đổi tên hoặc chưa được tải lên</li>
+      </ul>
+
+      <h2>Thử lại tra cứu</h2>
+      <label for="code">Mã chứng nhận</label>
+      <input id="code" type="text" placeholder="VD: AID_1AS_2025_001" autocomplete="off"/>
+      <div class="actions">
+        <button class="btn" id="retry">Tra cứu lại</button>
+        <a class="btn secondary" href="./">Về trang tra cứu</a>
+        <a class="btn link" href="/">Về trang chủ</a>
+      </div>
+    </section>
+
+    <footer>© Aiducate.net • “Bình dân học vụ AI” • <a href="/">Trang chủ</a></footer>
+  </div>
+
+  <script>
+    // Lấy code từ query để hiển thị và prefill
+    const params = new URLSearchParams(location.search);
+    const code = (params.get('code') || '').trim();
+    const codeView = document.getElementById('codeView');
+    const codeInput = document.getElementById('code');
+    const retryBtn = document.getElementById('retry');
+
+    if(code){ codeView.textContent = code; codeInput.value = code; }
+
+    retryBtn.addEventListener('click', ()=>{
+      const val = (codeInput.value || '').trim();
+      if(!val){ codeInput.focus(); return; }
+      // Điều hướng lại về trang tra cứu kèm mã
+      const qs = new URLSearchParams({code: val}).toString();
+      location.href = `./?${qs}`;
+    });
+
+    codeInput.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter'){ retryBtn.click(); }
+    });
+  </script>
+</body>
+</html>
