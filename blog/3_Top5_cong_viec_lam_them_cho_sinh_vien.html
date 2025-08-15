@@ -4,60 +4,90 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Top 5 công việc làm thêm phù hợp nhất cho sinh viên</title>
+  <link rel="icon" href="/favicon.ico" />
   <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
+    :root {
+      --bg: #0f1c2e;
+      --ink: #ffffff;
+      --brand: #2b93e4;
+      --accent: #4bc0c8;
+      --card: #15243b;
+      --muted: #d0e4ff;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
-    .container {
-      max-width: 850px;
-      margin: auto;
-      background: white;
-      padding: 30px;
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: var(--bg);
+      padding: 12px 0;
+      z-index: 1000;
     }
     header img {
-      max-width: 180px;
+      max-width: 160px;
+      display: block;
+      margin: auto;
+    }
+    .container {
+      width: 92%;
+      max-width: 1180px;
+      margin: auto;
+      padding: 20px;
     }
     h1 {
-      color: #1a73e8;
+      color: var(--brand);
+      font-size: 1.8em;
+      margin-top: 20px;
     }
     h2 {
-      color: #f57c00;
-      margin-top: 30px;
+      color: var(--accent);
+      margin-top: 40px;
+      font-size: 1.4em;
     }
     img {
       width: 100%;
-      margin: 20px 0;
-      border-radius: 10px;
+      border-radius: 12px;
+      margin: 16px 0;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    p, ul {
+      color: var(--muted);
     }
     ul {
       padding-left: 20px;
     }
     a {
-      color: #1a73e8;
+      color: #9ed6ff;
       text-decoration: none;
     }
-    .tagline {
-      font-size: 1.2em;
-      color: #666;
-      margin-bottom: 20px;
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      padding: 20px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="../logo.png" alt="Aiducate.net Logo" />
-    </header>
+  <header>
+    <img src="/logo.png" alt="Aiducate.net Logo" />
+  </header>
 
+  <div class="container">
     <h1>💼 Top 5 công việc làm thêm “đáng thử” nhất cho sinh viên 🎓</h1>
     <p class="tagline">Bạn đang tìm việc làm thêm vừa kiếm được tiền, vừa giúp phát triển bản thân? Dưới đây là 5 lựa chọn không thể bỏ qua!</p>
 
     <h2>📚 1. Gia sư – Việc truyền thống nhưng giá trị “bền vững”</h2>
-    <img src="https://images.unsplash.com/photo-1600195077071-df1ebfe2c5ef" alt="Sinh viên dạy học">
+    <img src="/images/giasu.webp" alt="Sinh viên dạy học">
     <p>Bạn học khá? Bạn kiên nhẫn? Bạn thích chia sẻ kiến thức? Làm gia sư chính là chân ái!</p>
     <ul>
       <li>Linh hoạt thời gian, thu nhập ổn định</li>
@@ -66,7 +96,7 @@
     </ul>
 
     <h2>📝 2. Cộng tác viên nội dung – “Vừa gõ bàn phím, vừa học được nghề”</h2>
-    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984" alt="Làm nội dung sáng tạo">
+    <img src="/images/congtacvien.webp" alt="Làm nội dung sáng tạo">
     <p>Thích viết, chụp ảnh, thiết kế, làm video? Đây là sân chơi của bạn!</p>
     <ul>
       <li>Làm online, chủ động thời gian</li>
@@ -75,7 +105,7 @@
     </ul>
 
     <h2>☕ 3. Làm thêm tại quán cafe, cửa hàng – “Trường đời mini” cho sinh viên</h2>
-    <img src="https://images.unsplash.com/photo-1585829365295-92dba4b6e2c8" alt="Sinh viên làm ở quán cafe">
+    <img src="/images/cafe.webp" alt="Sinh viên làm ở quán cafe">
     <p>Không cần kinh nghiệm, chỉ cần thái độ tốt là có thể bắt đầu!</p>
     <ul>
       <li>Học kỹ năng phục vụ, teamwork, xử lý tình huống</li>
@@ -84,7 +114,7 @@
     </ul>
 
     <h2>📦 4. Bán hàng online – Tập tành kinh doanh từ con số 0</h2>
-    <img src="https://images.unsplash.com/photo-1605719121893-4e57b13c5bb4" alt="Sinh viên bán hàng online">
+    <img src="/images/banhang.webp" alt="Sinh viên bán hàng online">
     <p>Gen Z mà chưa thử kinh doanh online thì hơi phí!</p>
     <ul>
       <li>Tự làm chủ – học cách marketing, CSKH</li>
@@ -93,7 +123,7 @@
     </ul>
 
     <h2>💻 5. Freelancer – Làm việc tự do, thu nhập theo năng lực</h2>
-    <img src="https://images.unsplash.com/photo-1612831455544-a7bb65f10e8b" alt="Freelancer làm việc online">
+    <img src="/images/freelancer.webp" alt="Freelancer làm việc online">
     <p>Có kỹ năng thiết kế, viết, dịch thuật, code...? Bắt đầu kiếm tiền ngay!</p>
     <ul>
       <li>Làm online, tự do thời gian</li>
@@ -103,8 +133,11 @@
 
     <h2>🎯 Kết luận: Làm thêm đúng cách – Đầu tư cho tương lai</h2>
     <p>Chọn công việc không chỉ để kiếm tiền – mà là để trưởng thành hơn mỗi ngày. Hãy bắt đầu từ việc bạn thích, giỏi, và sẵn sàng học hỏi.</p>
-    <p>👉 Theo dõi <a href="https://aiducate.net" target="_blank">Aiducate.net</a> để khám phá thêm kỹ năng sống, kỹ năng nghề nghiệp và cách kiếm tiền thông minh khi còn là sinh viên!</p>
+    <p>👉 Theo dõi <a href="https://www.aiducate.net/blog/startup-money.html" target="_blank">Aiducate.net</a> để khám phá thêm kỹ năng sống, kỹ năng nghề nghiệp và cách kiếm tiền thông minh khi còn là sinh viên!</p>
   </div>
+
+  <footer class="footer">
+    &copy; 2025 Aiducate.net – All rights reserved. | <a href="/legal/terms.htmlhtml">Chính sách & Điều khoản</a>
+  </footer>
 </body>
 </html>
-
