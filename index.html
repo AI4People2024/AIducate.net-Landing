@@ -29,8 +29,6 @@
     .menu > li > a:hover{background:rgba(255,255,255,.06)}
     .dropdown{position:absolute;left:0;top:42px;background:#0f1c2e;border:1px solid rgba(255,255,255,.08);border-radius:10px;min-width:280px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.25)}
     .menu > li:hover .dropdown{display:block}
-    .dropdown a{display:block;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06)}
-    .dropdown a:last-child{border-bottom:none}
     .cta-nav{background:var(--brand);padding:10px 14px;border-radius:10px;font-weight:600}
     .cta-nav:hover{filter:brightness(1.05)}
 
@@ -38,9 +36,23 @@
     .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
     .hamburger span{width:24px;height:2px;background:#fff}
     @media (max-width: 980px){
-      .menu{display:none;position:absolute;left:0;right:0;top:64px;background:#0f1c2e;flex-direction:column;padding:14px;border-top:1px solid rgba(255,255,255,.1)}
+      .menu{
+        display:none;
+        position:absolute;left:0;right:0;top:64px;
+        background:#0f1c2e;
+        flex-direction:column;
+        padding:14px;
+        border-top:1px solid rgba(255,255,255,.1);
+        /* --- FIX SCROLL ON MOBILE MENU --- */
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+      }
       .menu.open{display:flex}
-      .dropdown{position:static;display:block;border:none;box-shadow:none;background:transparent}
+      .dropdown{
+        position:static;display:block;border:none;box-shadow:none;background:transparent
+      }
       .dropdown a{padding-left:30px}
       .hamburger{display:flex}
     }
