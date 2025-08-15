@@ -4,64 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Làm Thêm Có Giúp Ích Cho Tương Lai?</title>
+  <link rel="icon" href="/favicon.ico" />
   <style>
-    body { font-family: 'Segoe UI', sans-serif; max-width: 760px; margin: auto; padding: 20px; background-color: #fff; color: #333; line-height: 1.6; }
-    h1, h2 { color: #2c7a7b; }
-    img { max-width: 100%; border-radius: 8px; margin: 20px 0; }
-    .highlight { background: #e6fffa; border-left: 4px solid #38b2ac; padding: 10px 15px; margin: 15px 0; }
-    ul { margin-left: 20px; }
-    .logo { max-width: 180px; margin-bottom: 20px; }
-    a { color: #3182ce; text-decoration: none; }
+    :root {
+      --bg: #0f1c2e;
+      --ink: #ffffff;
+      --brand: #2b93e4;
+      --accent: #4bc0c8;
+      --card: #15243b;
+      --muted: #d0e4ff;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: var(--bg);
+      padding: 12px 0;
+      z-index: 1000;
+    }
+    header img {
+      max-width: 160px;
+      display: block;
+      margin: auto;
+    }
+    .container {
+      width: 92%;
+      max-width: 1180px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      color: var(--brand);
+      font-size: 1.8em;
+      margin-top: 20px;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 30px;
+      font-size: 1.4em;
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .highlight {
+      background: rgba(75, 192, 200, 0.2);
+      border-left: 4px solid var(--accent);
+      padding: 10px 15px;
+      margin: 15px 0;
+      color: var(--muted);
+    }
+    p, ul {
+      color: var(--muted);
+    }
+    ul {
+      padding-left: 20px;
+    }
+    a {
+      color: #9ed6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      padding: 20px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
-  <img src="../logo.png" alt="Aiducate.net Logo" class="logo">
-  <h1>💼 Làm Thêm Có Giúp Ích Cho Tương Lai? 5 Lý Do Bạn Nên Biết!</h1>
-  <p>Bạn nghĩ làm thêm chỉ để kiếm tiền tiêu vặt? 🧐<br>
-  Thật ra, nếu chọn công việc đúng – bạn không chỉ có thêm thu nhập, mà còn "hack" được cả bộ kỹ năng mềm và tích lũy điểm cộng cho hồ sơ nghề nghiệp tương lai đấy! ✨</p>
-  
-  <h2>💬 1. Kỹ năng mềm tăng cấp cực nhanh!</h2>
-  <div class="highlight">
-    ✔️ Tự tin hơn khi giao tiếp<br>
-    ✔️ Biết cách làm việc nhóm, xử lý tình huống<br>
-    ✔️ Sắp xếp thời gian học & làm hiệu quả hơn
+  <header>
+    <img src="/logo.png" alt="Aiducate.net Logo">
+  </header>
+
+  <div class="container">
+    <h1>💼 Làm Thêm Có Giúp Ích Cho Tương Lai? 5 Lý Do Bạn Nên Biết!</h1>
+    <img src="/images/lamthem.png" alt="Sinh viên làm thêm">
+
+    <p>Bạn nghĩ làm thêm chỉ để kiếm tiền tiêu vặt? 🧐<br>
+    Thật ra, nếu chọn công việc đúng – bạn không chỉ có thêm thu nhập, mà còn "hack" được cả bộ kỹ năng mềm và tích lũy điểm cộng cho hồ sơ nghề nghiệp tương lai đấy! ✨</p>
+
+    <h2>💬 1. Kỹ năng mềm tăng cấp cực nhanh!</h2>
+    <div class="highlight">
+      ✔️ Tự tin hơn khi giao tiếp<br>
+      ✔️ Biết cách làm việc nhóm, xử lý tình huống<br>
+      ✔️ Sắp xếp thời gian học & làm hiệu quả hơn
+    </div>
+    <p>Kỹ năng mềm không có điểm số ở trường học, nhưng là "vũ khí" ghi điểm cực mạnh trong mắt nhà tuyển dụng.</p>
+
+    <h2>📄 2. Hồ sơ xin việc có “chất” hơn hẳn nhờ kinh nghiệm thật</h2>
+    <p>Nhà tuyển dụng rất thích sinh viên đã có trải nghiệm làm thêm!</p>
+    <ul>
+      <li>Thể hiện bạn biết chịu trách nhiệm, năng động</li>
+      <li>Kinh nghiệm giúp bạn nổi bật hơn nếu biết trình bày</li>
+    </ul>
+
+    <h2>💡 3. Hiểu bản thân hơn – chọn nghề đúng hướng</h2>
+    <ul>
+      <li>Thử nhiều công việc giúp phát hiện điều bạn thực sự yêu thích</li>
+      <li>Hiểu điểm mạnh – yếu của bản thân để tự điều chỉnh sớm</li>
+    </ul>
+    <div class="highlight">👉 Trải nghiệm thật giúp bạn tránh đi sai hướng!</div>
+
+    <h2>💰 4. Có tiền đầu tư cho chính mình!</h2>
+    <p>Không chỉ để bù đắp chi tiêu, tiền làm thêm còn giúp bạn:</p>
+    <ul>
+      <li>Học kỹ năng mới, bổ sung thêm chứng chỉ</li>
+      <li>Mua sách hay, học ngoại ngữ</li>
+      <li>Dự phòng cho thực tập, lúc khó khăn</li>
+    </ul>
+
+    <h2>🤝 5. Mở rộng mối quan hệ – cơ hội nghề đến sớm</h2>
+    <p>Đi làm thêm là cách tạo dựng mạng lưới kết nối sớm:</p>
+    <ul>
+      <li>Sếp cũ giới thiệu bạn thực tập</li>
+      <li>Đồng nghiệp rủ về team mới</li>
+      <li>Gặp người quen mở ra cơ hội bất ngờ</li>
+    </ul>
+
+    <h2>🎯 Tóm lại...</h2>
+    <p>Làm thêm không chỉ để có thêm thu nhập – mà còn là cách phát triển kỹ năng, mở rộng cơ hội nghề nghiệp và khám phá bản thân.</p>
+    <p>📌 Theo dõi <a href="https://www.aiducate.net/blog/startup-money.html">Aiducate.net</a> để khám phá thêm kỹ năng sinh viên cần biết<br>
+    📺 Xem video thực tế tại: <a href="https://www.youtube.com/@Caunoigiangduongsunghiep">YouTube Aiducate</a></p>
   </div>
-  <p>Kỹ năng mềm không có điểm số ở trường học, nhưng là "vũ khí" ghi điểm cực mạnh trong mắt nhà tuyển dụng.</p>
 
-  <h2>📄 2. Hồ sơ xin việc có “chất” hơn hẳn nhờ kinh nghiệm thật</h2>
-  <p>Nhà tuyển dụng rất thích sinh viên đã có trải nghiệm làm thêm!</p>
-  <ul>
-    <li>Thể hiện bạn biết chịu trách nhiệm, năng động</li>
-    <li>Kinh nghiệm giúp bạn nổi bật hơn nếu biết trình bày</li>
-  </ul>
-
-  <h2>💡 3. Hiểu bản thân hơn – chọn nghề đúng hướng</h2>
-  <ul>
-    <li>Thử nhiều công việc giúp phát hiện điều bạn thực sự yêu thích</li>
-    <li>Hiểu điểm mạnh – yếu của bản thân để tự điều chỉnh sớm</li>
-  </ul>
-  <div class="highlight">👉 Trải nghiệm thật giúp bạn tránh đi sai hướng!</div>
-
-  <h2>💰 4. Có tiền đầu tư cho chính mình!</h2>
-  <p>Không chỉ để bù đắp chi tiêu, tiền làm thêm còn giúp bạn:</p>
-  <ul>
-    <li>Học kỹ năng mới, bổ sung thêm chứng chỉ</li>
-    <li>Mua sách hay, học ngoại ngữ</li>
-    <li>Dự phòng cho thực tập, lúc khó khăn</li>
-  </ul>
-
-  <h2>🤝 5. Mở rộng mối quan hệ – cơ hội nghề đến sớm</h2>
-  <p>Đi làm thêm là cách tạo dựng mạng lưới kết nối sớm:</p>
-  <ul>
-    <li>Sếp cũ giới thiệu bạn thực tập</li>
-    <li>Đồng nghiệp rủ về team mới</li>
-    <li>Gặp người quen mở ra cơ hội bất ngờ</li>
-  </ul>
-
-  <h2>🎯 Tóm lại...</h2>
-  <p>Làm thêm không chỉ để có thêm thu nhập – mà còn là cách phát triển kỹ năng, mở rộng cơ hội nghề nghiệp và khám phá bản thân.</p>
-  <p>📌 Theo dõi <a href="https://aiducate.net">Aiducate.net</a> để khám phá thêm kỹ năng sinh viên cần biết<br>
-  📺 Xem video thực tế tại: <a href="https://www.youtube.com/@Aiducate">YouTube Aiducate</a></p>
+  <footer class="footer">
+    &copy; 2025 Aiducate.net – All rights reserved. | <a href="/legal/terms.html">Chính sách & Điều khoản</a>
+  </footer>
 </body>
 </html>
-
