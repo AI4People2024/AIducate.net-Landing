@@ -4,55 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Freelancer từ con số 0: Hướng dẫn cho sinh viên Việt</title>
+  <link rel="icon" href="/favicon.ico" />
   <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
+    :root {
+      --bg: #0f1c2e;
+      --ink: #ffffff;
+      --brand: #2b93e4;
+      --accent: #4bc0c8;
+      --card: #15243b;
+      --muted: #d0e4ff;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
-    .container {
-      max-width: 850px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: var(--bg);
+      padding: 12px 0;
+      z-index: 1000;
     }
     header img {
-      max-width: 180px;
+      max-width: 160px;
+      display: block;
+      margin: auto;
+    }
+    .container {
+      width: 92%;
+      max-width: 1180px;
+      margin: auto;
+      padding: 20px;
     }
     h1 {
-      color: #1a73e8;
+      color: var(--brand);
+      font-size: 1.8em;
+      margin-top: 20px;
     }
     h2 {
-      color: #f57c00;
-      margin-top: 30px;
+      color: var(--accent);
+      margin-top: 32px;
+      font-size: 1.4em;
     }
     img {
       width: 100%;
+      border-radius: 12px;
       margin: 20px 0;
-      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    p, ul {
+      color: var(--muted);
     }
     ul {
       padding-left: 20px;
     }
     a {
-      color: #1a73e8;
+      color: #9ed6ff;
       text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      padding: 20px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="../logo.png" alt="Aiducate.net Logo" />
-    </header>
+  <header>
+    <img src="/logo.png" alt="Aiducate.net Logo" />
+  </header>
 
+  <div class="container">
     <h1>💻 Freelancer từ con số 0: Hành trình bắt đầu cho sinh viên Việt 🎓</h1>
     <p>Bạn là sinh viên và đang tìm cách kiếm thêm thu nhập, nhưng không muốn bị bó buộc thời gian như các công việc part-time truyền thống? Freelancer chính là con đường lý tưởng dành cho bạn!</p>
 
+    <img src="/images/freelancer.jpg" alt="Freelancer làm việc tự do">
+
     <h2>🚀 Freelancer là gì mà hot vậy?</h2>
-    <img src="https://images.unsplash.com/photo-1587614382346-4ec5f2f2d16e" alt="Freelancer làm việc tự do">
     <p>Freelancer là người làm việc tự do: bạn nhận dự án, làm theo deadline và được trả tiền theo công việc.</p>
     <ul>
       <li>⏰ Tự do thời gian, chọn giờ làm phù hợp</li>
@@ -62,7 +98,6 @@
     </ul>
 
     <h2>✨ Những kỹ năng phù hợp để bắt đầu?</h2>
-    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5a5ef13" alt="Sinh viên luyện kỹ năng">
     <ul>
       <li>✍️ Viết lách: blog, SEO, PR sản phẩm</li>
       <li>🎨 Thiết kế cơ bản: Canva, Figma</li>
@@ -72,7 +107,6 @@
     </ul>
 
     <h2>🛠️ Làm sao để bắt đầu nếu chưa có gì?</h2>
-    <img src="https://images.unsplash.com/photo-1623851391275-0e540be84b11" alt="Bắt đầu từ số 0">
     <ul>
       <li>🎓 Tự học kỹ năng trên YouTube, Coursera...</li>
       <li>🎒 Tạo portfolio cá nhân (Google Drive, Behance...)</li>
@@ -81,7 +115,6 @@
     </ul>
 
     <h2>📌 3 lưu ý quan trọng nếu muốn đi xa</h2>
-    <img src="https://images.unsplash.com/photo-1583225281974-4fd26b9ffef2" alt="Lưu ý khi làm freelancer">
     <ul>
       <li>🧭 Đừng làm mãi với giá quá rẻ</li>
       <li>📩 Làm việc chuyên nghiệp từ những điều nhỏ</li>
@@ -92,6 +125,9 @@
     <p>Freelancer là cơ hội tuyệt vời cho sinh viên chủ động kiếm tiền và học hỏi. Chỉ cần chọn một kỹ năng, luyện đều mỗi ngày và dám bắt đầu – bạn sẽ tiến rất xa!</p>
     <p>👉 Follow <a href="https://aiducate.net" target="_blank">Aiducate.net</a> để khám phá thêm kỹ năng mềm, kỹ năng nghề nghiệp và cơ hội làm thêm thông minh nhé!</p>
   </div>
+
+  <footer class="footer">
+    &copy; 2025 Aiducate.net – All rights reserved. | <a href="/legal">Chính sách & Điều khoản</a>
+  </footer>
 </body>
 </html>
-
