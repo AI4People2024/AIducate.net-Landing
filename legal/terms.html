@@ -1,41 +1,206 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Trang đang cập nhật – Aiducate.net</title>
-  <link rel="icon" href="../favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Chính sách & Điều khoản – Aiducate.net</title>
+  <link rel="icon" href="/favicon.ico"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root{
-      --bg:#0f1c2e; --ink:#ffffff; --brand:#2b93e4; --accent:#4bc0c8; --muted:#d0e4ff;
+      --bg:#0f1c2e; --ink:#ffffff; --brand:#2b93e4; --accent:#4bc0c8; --card:#15243b; --muted:#d0e4ff;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:20px;text-align:center}
-    img{width:140px;height:140px;object-fit:contain;margin-bottom:20px}
-    h1{font-size:26px;color:var(--brand);margin:10px 0}
-    p.lead{color:var(--muted);max-width:700px;margin:0 auto 20px;font-size:18px}
-    .section{max-width:800px;margin-top:30px;text-align:left}
-    .section h2{color:var(--accent);margin-bottom:6px}
-    .section p{color:var(--muted);margin:0 0 18px}
-    footer{margin-top:40px;opacity:.6;font-size:14px}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
+    a{color:#9ed6ff;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:92%;max-width:1180px;margin:auto}
+    .nav-wrap{position:sticky;top:0;background:rgba(15,28,46,.9);backdrop-filter:blur(6px);z-index:50;border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:40px;height:40px;object-fit:contain}
+    .brand span{font-weight:700;letter-spacing:.3px}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu > li{list-style:none;position:relative}
+    .menu > li > a{padding:10px 12px;border-radius:8px;display:inline-block;color:var(--ink)}
+    .menu > li > a:hover{background:rgba(255,255,255,.06)}
+    .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+    .hamburger span{width:24px;height:2px;background:#fff}
+    @media (max-width: 980px){
+      .menu{display:none;position:absolute;left:0;right:0;top:64px;background:#0f1c2e;flex-direction:column;padding:14px;border-top:1px solid rgba(255,255,255,.1);max-height:calc(100vh - 64px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+      .menu.open{display:flex}
+      .menu > li{width:100%}
+      .menu > li > a{display:block;width:100%}
+      .hamburger{display:flex}
+    }
+    .hero{padding:36px 0 14px}
+    .hero h1{font-size:32px;margin:6px 0;color:var(--brand)}
+    .hero p{color:var(--muted);max-width:900px}
+    .paper{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;margin:16px 0}
+    h2{color:var(--accent);font-size:22px;margin:10px 0}
+    h3{color:var(--brand);font-size:18px;margin:10px 0 4px}
+    p, li{color:var(--muted)}
+    ul{margin:8px 0 16px 22px}
+    .note{font-size:14px;opacity:.9}
+    .blockquote{border-left:3px solid var(--accent);padding-left:12px;margin:8px 0;color:#cfe9ff}
+    footer{margin:36px 0 22px;opacity:.7;font-size:14px}
+    .pill{display:inline-block;background:rgba(255,255,255,.08);padding:2px 8px;border-radius:8px}
   </style>
 </head>
 <body>
-  <img src="../logo.png" alt="Aiducate.net Logo">
-  <h1>Giới thiệu về Aiducate.net</h1>
-  <p class="lead">Cám ơn bạn đã ghé thăm!<br>Chúng tôi đang hoàn thiện tính năng này và sẽ cập nhật trong thời gian sớm nhất!</p>
-
-  <div class="section">
-    <h2>🎯 Sứ mệnh</h2>
-    <p>Aiducate.net ra đời với mục tiêu đồng hành cùng sinh viên Việt Nam trên hành trình học tập và lập nghiệp, thông qua các công cụ AI và nội dung đào tạo giúp nâng cao kỹ năng mềm, kỹ năng số và định hướng nghề nghiệp.</p>
-
-    <h2>🚀 Tầm nhìn</h2>
-    <p>Trở thành nền tảng hỗ trợ học tập và phát triển nghề nghiệp hàng đầu tại Việt Nam, mang đến trải nghiệm cá nhân hóa, ứng dụng công nghệ hiện đại để mở rộng cơ hội việc làm và thành công cho sinh viên.</p>
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="/"><img src="/logo.png" alt="Aiducate Logo"/><span>Aiducate.net</span></a>
+      <div class="hamburger" id="hamburger" aria-label="Mở menu"><span></span><span></span><span></span></div>
+      <ul class="menu" id="menu">
+        <li><a href="/about.html">Giới thiệu</a></li>
+        <li><a href="/tools/index.html">Công cụ AI</a></li>
+        <li><a href="/career/index.html">Thực tập & Việc làm</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/community/index.html">Cộng đồng</a></li>
+        <li><a href="/support/">Trợ giúp</a></li>
+      </ul>
+    </div>
   </div>
 
-  <footer>
-    © 2025 Aiducate.net • Bình dân học vụ AI
+  <!-- HERO -->
+  <section class="hero container">
+    <h1>Chính sách & Điều khoản sử dụng</h1>
+    <p class="note">Bản mẫu tham khảo, áp dụng cho dịch vụ của Aiducate.net tại Việt Nam. Vui lòng đọc kỹ trước khi sử dụng. Bản này không thay thế tư vấn pháp lý; bạn có thể liên hệ chúng tôi để được giải thích rõ hơn.</p>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="container paper">
+    <h2>1. Phạm vi áp dụng & Thuật ngữ</h2>
+    <p>Tài liệu này điều chỉnh việc truy cập và sử dụng website, ứng dụng, công cụ AI, dịch vụ học tập – hướng nghiệp – thực tập – việc làm do <strong>Aiducate.net</strong> cung cấp (“<span class="pill">Dịch vụ</span>”). Khi truy cập hoặc sử dụng, bạn mặc nhiên đồng ý tuân thủ Điều khoản này và các Chính sách liên quan.</p>
+    <h3>Thuật ngữ</h3>
+    <ul>
+      <li><strong>“Người dùng”</strong>: cá nhân sử dụng Dịch vụ (sinh viên, giảng viên, nhà tuyển dụng…)</li>
+      <li><strong>“Dữ liệu cá nhân”</strong>: thông tin theo định nghĩa tại Nghị định 13/2023/NĐ-CP, gồm dữ liệu cơ bản và dữ liệu nhạy cảm.</li>
+      <li><strong>“Xử lý dữ liệu”</strong>: thu thập, ghi, phân tích, lưu trữ, sửa đổi, chia sẻ, truyền, xóa, hủy…</li>
+    </ul>
+  </section>
+
+  <section class="container paper">
+    <h2>2. Điều khoản sử dụng</h2>
+    <ul>
+      <li>Không sử dụng Dịch vụ cho mục đích vi phạm pháp luật, xâm phạm đạo đức, gian lận học thuật (đạo văn, nộp bài do AI tạo mà không tuân thủ quy định môn học…), phát tán mã độc, nội dung độc hại, hoặc xâm phạm quyền của bên thứ ba.</li>
+      <li>Tuân thủ Luật An ninh mạng 2018, Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân, Luật Sở hữu trí tuệ, Luật Bảo vệ quyền lợi người tiêu dùng, và quy định liên quan.</li>
+      <li>Chúng tôi có quyền tạm ngưng/ chấm dứt cung cấp Dịch vụ nếu phát hiện hành vi lạm dụng/vi phạm.</li>
+    </ul>
+  </section>
+
+  <section class="container paper">
+    <h2>3. Chính sách quyền riêng tư (Bảo vệ dữ liệu cá nhân)</h2>
+
+    <h3>3.1. Loại dữ liệu thu thập</h3>
+    <ul>
+      <li><em>Dữ liệu tài khoản</em>: họ tên, email, số điện thoại, trường/lớp/khoa, ảnh đại diện (nếu có).</li>
+      <li><em>Dữ liệu sử dụng</em>: log truy cập, cookie, hành vi trên trang, thiết bị, trình duyệt.</li>
+      <li><em>Dữ liệu học tập – nghề nghiệp</em>: nội dung bài luận, kết quả chấm điểm, CV, kết quả test hướng nghiệp, thông tin thực tập/việc làm.</li>
+      <li><em>Dữ liệu thanh toán</em>: do đối tác cổng thanh toán xử lý theo tiêu chuẩn của họ; Aiducate.net không lưu thông tin thẻ đầy đủ.</li>
+    </ul>
+
+    <h3>3.2. Mục đích xử lý</h3>
+    <ul>
+      <li>Cung cấp, vận hành, cá nhân hóa Dịch vụ; chấm điểm, phản hồi, gợi ý cải thiện bài luận/CV; tư vấn hướng nghiệp.</li>
+      <li>Chứng nhận số thực tập/kinh nghiệm; xác thực mã chứng nhận cho nhà tuyển dụng.</li>
+      <li>Cải thiện chất lượng, bảo mật, phát hiện & phòng chống gian lận; thống kê ẩn danh.</li>
+      <li>Giao tiếp chăm sóc khách hàng; thông báo cập nhật, ưu đãi (có thể hủy đăng ký bất kỳ lúc nào).</li>
+    </ul>
+
+    <h3>3.3. Căn cứ pháp lý & Cơ chế đồng ý</h3>
+    <p>Chúng tôi xử lý dữ liệu dựa trên <strong>sự đồng ý</strong> của bạn (Điều 11, 13 Nghị định 13/2023/NĐ-CP), <em>hoặc</em> khi cần thiết để thực hiện hợp đồng/dịch vụ bạn yêu cầu, <em>hoặc</em> để đáp ứng nghĩa vụ pháp luật. Bạn có quyền rút lại sự đồng ý bất kỳ lúc nào (không ảnh hưởng tính hợp pháp của việc xử lý trước thời điểm rút).</p>
+
+    <h3>3.4. Quyền của chủ thể dữ liệu</h3>
+    <ul>
+      <li>Được thông báo, truy cập, chỉnh sửa, xóa, hạn chế xử lý, khiếu nại; rút lại đồng ý; yêu cầu cung cấp dữ liệu theo luật định.</li>
+      <li>Thực hiện qua email: <a href="mailto:privacy@aiducate.net">privacy@aiducate.net</a>. Chúng tôi sẽ phản hồi theo thời hạn luật định.</li>
+    </ul>
+
+    <h3>3.5. Lưu trữ & Thời hạn</h3>
+    <p>Dữ liệu được lưu trữ trên hạ tầng đám mây (có thể ở ngoài lãnh thổ Việt Nam) trong thời gian cần thiết cho mục đích đã nêu hoặc theo yêu cầu pháp luật; sau đó được xóa/ẩn danh hóa an toàn.</p>
+
+    <h3>3.6. Chia sẻ dữ liệu</h3>
+    <ul>
+      <li><em>Nhà tuyển dụng/doanh nghiệp</em>: khi bạn chủ động chia sẻ hồ sơ/chứng nhận; hoặc khi có mã xác thực hợp lệ.</li>
+      <li><em>Đối tác kỹ thuật</em>: nhà cung cấp hạ tầng, phân tích, chống gian lận, cổng thanh toán… theo hợp đồng bảo mật.</li>
+      <li><em>Cơ quan nhà nước</em>: khi có yêu cầu hợp pháp.</li>
+    </ul>
+
+    <h3>3.7. Chuyển dữ liệu ra nước ngoài</h3>
+    <p>Nếu có việc truyền dữ liệu ra nước ngoài, chúng tôi sẽ tuân thủ điều kiện theo Nghị định 13/2023/NĐ-CP (ví dụ: thông báo, đánh giá tác động nếu áp dụng) và áp dụng biện pháp bảo mật tương ứng.</p>
+
+    <h3>3.8. Bảo mật</h3>
+    <p>Áp dụng các biện pháp kỹ thuật & tổ chức hợp lý: mã hóa khi truyền, kiểm soát truy cập, phân tách môi trường, sao lưu… Tuy nhiên, không hệ thống nào an toàn tuyệt đối; bạn vui lòng giữ bí mật thông tin đăng nhập.</p>
+
+    <h3>3.9. Trẻ em</h3>
+    <p>Đối tượng dưới 16 tuổi cần có sự đồng ý của cha mẹ/người giám hộ theo quy định pháp luật.</p>
+  </section>
+
+  <section class="container paper">
+    <h2>4. Cookie & công nghệ tương tự</h2>
+    <p>Chúng tôi sử dụng cookie để ghi nhớ phiên đăng nhập, tùy chỉnh trải nghiệm và phân tích ẩn danh. Bạn có thể quản lý cookie trong cài đặt trình duyệt. Một số tính năng có thể không hoạt động nếu tắt hoàn toàn cookie.</p>
+  </section>
+
+  <section class="container paper">
+    <h2>5. Nội dung người dùng & Sở hữu trí tuệ</h2>
+    <ul>
+      <li>Bạn chịu trách nhiệm về nội dung mình tải lên/nhập vào (bài luận, CV, câu trả lời test…). Không gửi nội dung vi phạm pháp luật, bản quyền, đạo đức.</li>
+      <li>Aiducate.net và/hoặc đối tác sở hữu các quyền đối với phần mềm, mô hình AI, thiết kế, nhãn hiệu, nội dung hệ thống. Bạn không được sao chép, bán lại, dịch ngược nếu không có sự cho phép.</li>
+      <li>Với nội dung bạn gửi để chấm điểm/góp ý, bạn cấp cho chúng tôi quyền không độc quyền nhằm mục đích vận hành Dịch vụ (xử lý, hiển thị, lưu trữ tạm thời, cải thiện chất lượng), tuân thủ Chính sách dữ liệu.</li>
+    </ul>
+  </section>
+
+  <section class="container paper">
+    <h2>6. Sử dụng AI, tính liêm chính học thuật & giới hạn trách nhiệm</h2>
+    <div class="blockquote">Công cụ AI có mục đích hỗ trợ học tập, không thay thế tư duy và trách nhiệm cá nhân. Bạn cần tuân thủ quy định môn học/nhà trường về việc sử dụng AI và trích dẫn nguồn.</div>
+    <ul>
+      <li>Kết quả AI có thể sai lệch; bạn cần kiểm chứng và chịu trách nhiệm cuối cùng.</li>
+      <li>Chúng tôi không chịu trách nhiệm đối với thiệt hại gián tiếp/phát sinh do việc sử dụng sai hướng dẫn.</li>
+      <li>Công cụ chống đạo văn/chấm điểm chỉ là hỗ trợ đánh giá; kết quả chính thức phụ thuộc hội đồng/giảng viên.</li>
+    </ul>
+  </section>
+
+  <section class="container paper">
+    <h2>7. Gói dịch vụ, thanh toán, hủy & hoàn tiền</h2>
+    <ul>
+      <li>Gói <em>Miễn phí</em> (giới hạn) và <em>Trả phí</em> (nâng cao). Chi tiết hiển thị tại trang giá/đăng ký.</li>
+      <li>Thanh toán qua đối tác cổng thanh toán; phí và thuế (nếu có) theo quy định.</li>
+      <li>Gia hạn định kỳ (nếu áp dụng) có thể hủy trước ngày gia hạn. Chính sách hoàn tiền (nếu có) sẽ nêu rõ ở trang thanh toán; mặc định không hoàn phí cho chu kỳ đã sử dụng, trừ khi luật yêu cầu.</li>
+    </ul>
+  </section>
+
+  <section class="container paper">
+    <h2>8. Khiếu nại, tranh chấp & luật áp dụng</h2>
+    <ul>
+      <li>Tiếp nhận khiếu nại qua: <a href="mailto:support@aiducate.net">support@aiducate.net</a>. Thời hạn phản hồi theo luật định.</li>
+      <li>Ưu tiên thương lượng/hòa giải. Nếu không đạt, tranh chấp sẽ do tòa án có thẩm quyền tại Việt Nam giải quyết.</li>
+      <li>Điều khoản này được điều chỉnh bởi pháp luật Việt Nam.</li>
+    </ul>
+  </section>
+
+  <section class="container paper">
+    <h2>9. Đầu mối bảo vệ dữ liệu cá nhân</h2>
+    <p>Email: <a href="mailto:privacy@aiducate.net">privacy@aiducate.net</a> • Hỗ trợ chung: <a href="mailto:support@aiducate.net">support@aiducate.net</a></p>
+  </section>
+
+  <section class="container paper">
+    <h2>10. Hiệu lực & cập nhật</h2>
+    <p>Chính sách & Điều khoản này có hiệu lực từ <strong>01/09/2025</strong> và có thể được cập nhật định kỳ để phù hợp quy định pháp luật và vận hành. Thay đổi quan trọng sẽ được thông báo trên website/email (nếu phù hợp).</p>
+    <p>Tiếp tục sử dụng Dịch vụ sau khi các thay đổi có hiệu lực đồng nghĩa bạn đã đọc, hiểu và đồng ý.</p>
+  </section>
+
+  <footer class="container">
+    © Aiducate.net • “Bình dân học vụ AI” • <a href="/">Trang chủ</a>
   </footer>
+
+  <script>
+    // Toggle mobile menu
+    const burger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    burger.addEventListener('click', () => menu.classList.toggle('open'));
+  </script>
 </body>
 </html>
