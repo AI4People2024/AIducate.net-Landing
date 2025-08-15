@@ -1,87 +1,157 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cân Bằng Học – Làm Thêm – Vui Chơi | Aiducate.net</title>
+  <link rel="icon" href="/favicon.ico" />
   <style>
-    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; padding: 20px; background: #fff; color: #333; max-width: 800px; margin: auto; }
-    h1, h2 { color: #2c7be5; }
-    h1 { font-size: 28px; }
-    h2 { font-size: 22px; margin-top: 30px; }
-    img { max-width: 100%; margin: 20px 0; border-radius: 10px; }
-    .logo { max-width: 180px; margin-bottom: 30px; }
-    .highlight { background: #eaf6ff; padding: 10px; border-left: 5px solid #2c7be5; margin: 15px 0; }
-    ul { padding-left: 20px; }
+    :root {
+      --bg: #0f1c2e;
+      --ink: #ffffff;
+      --brand: #2b93e4;
+      --accent: #4bc0c8;
+      --card: #15243b;
+      --muted: #d0e4ff;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: var(--bg);
+      padding: 12px 0;
+      z-index: 1000;
+    }
+    header img {
+      max-width: 160px;
+      display: block;
+      margin: auto;
+    }
+    .container {
+      width: 92%;
+      max-width: 1180px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      color: var(--brand);
+      font-size: 1.8em;
+      margin-top: 20px;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 40px;
+      font-size: 1.4em;
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 24px 0;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .highlight {
+      background: rgba(75,192,200,0.15);
+      border-left: 4px solid var(--accent);
+      padding: 12px;
+      margin: 24px 0;
+      color: var(--muted);
+    }
+    ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    p {
+      color: var(--muted);
+    }
+    a {
+      color: #9ed6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      padding: 20px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <img src="/logo.png" alt="Aiducate Logo" />
+  </header>
 
-  <img src="../logo.png" alt="Aiducate Logo" class="logo">
+  <div class="container">
+    <h1>🎓 Cân Bằng Học – Làm Thêm – Vui Chơi: Bí Kíp Sống Sót Ở Đại Học!</h1>
 
-  <h1>🎓 Cân Bằng Học – Làm Thêm – Vui Chơi: Bí Kíp Sống Sót Ở Đại Học!</h1>
+    <p>Bạn từng trải qua cảm giác này chưa: sáng chạy vội đến lớp, chiều lao ra làm thêm, tối lại đi “xõa” với bạn bè hoặc chôn mình trong đống deadline? Học đại học đúng là hành trình nhiều sắc màu – nhưng cũng đầy thử thách nếu bạn không biết cách cân bằng mọi thứ.</p>
 
-  <p>Bạn từng trải qua cảm giác này chưa: sáng chạy vội đến lớp, chiều lao ra làm thêm, tối lại đi “xõa” với bạn bè hoặc chôn mình trong đống deadline? Học đại học đúng là hành trình nhiều sắc màu – nhưng cũng đầy thử thách nếu bạn không biết cách cân bằng mọi thứ.</p>
+    <p>Vậy làm sao để vừa học tốt, vừa có tiền tiêu, mà vẫn tận hưởng trọn vẹn thanh xuân sinh viên? Hãy cùng “bỏ túi” những bí kíp sống sót dưới đây nhé!</p>
 
-  <p>Vậy làm sao để vừa học tốt, vừa có tiền tiêu, mà vẫn tận hưởng trọn vẹn thanh xuân sinh viên? Hãy cùng “bỏ túi” những bí kíp sống sót dưới đây nhé!</p>
+    <img src="/images/banhang.pngpng" alt="Sinh viên học và làm thêm">
 
-  <img src="https://img.freepik.com/free-photo/students-studying-campus_23-2147664935.jpg" alt="Sinh viên học và làm thêm">
+    <h2>❗ Vì sao chúng ta dễ bị “quá tải”?</h2>
+    <p>Đại học không phải chỉ có chuyện học. Bạn còn phải lo:</p>
+    <ul>
+      <li>Bài vở, thuyết trình, thi cử liên tục</li>
+      <li>Làm thêm để tự lập tài chính</li>
+      <li>Tham gia hoạt động câu lạc bộ, bạn bè, hẹn hò, sống ảo</li>
+      <li>Và cả… việc scroll mạng xã hội hàng tiếng đồng hồ không hay</li>
+    </ul>
+    <div class="highlight">📌 Bạn không phải người thiếu năng suất. Bạn chỉ đang thiếu một kế hoạch rõ ràng!</div>
 
-  <h2>❗ Vì sao chúng ta dễ bị “quá tải”?</h2>
-  <p>Đại học không phải chỉ có chuyện học. Bạn còn phải lo:</p>
-  <ul>
-    <li>Bài vở, thuyết trình, thi cử liên tục</li>
-    <li>Làm thêm để tự lập tài chính</li>
-    <li>Tham gia hoạt động câu lạc bộ, bạn bè, hẹn hò, sống ảo</li>
-    <li>Và cả… việc scroll mạng xã hội hàng tiếng đồng hồ không hay</li>
-  </ul>
-  <div class="highlight">📌 Bạn không phải người thiếu năng suất. Bạn chỉ đang thiếu một kế hoạch rõ ràng!</div>
+    <h2>📅 Chìa khoá: Sắp xếp lại thời gian mỗi ngày</h2>
+    <p>Một mẹo đơn giản: chia ngày ra 3 phần –</p>
+    <ul>
+      <li>1 phần cho học</li>
+      <li>1 phần cho việc làm thêm hoặc hoạt động khác</li>
+      <li>1 phần cho chính bạn</li>
+    </ul>
+    <p>Hãy lên lịch tuần vào tối Chủ nhật – bạn sẽ bất ngờ khi thấy mình thực ra vẫn còn thời gian để… thở.</p>
+    <div class="highlight">🎯 Gợi ý: dùng Google Calendar hoặc app ghi chú – và nhất định phải có “giờ nghỉ” như lịch học!</div>
 
-  <h2>📅 Chìa khoá: Sắp xếp lại thời gian mỗi ngày</h2>
-  <p>Một mẹo đơn giản: chia ngày ra 3 phần –</p>
-  <ul>
-    <li>1 phần cho học</li>
-    <li>1 phần cho việc làm thêm hoặc hoạt động khác</li>
-    <li>1 phần cho chính bạn</li>
-  </ul>
-  <p>Hãy lên lịch tuần vào tối Chủ nhật – bạn sẽ bất ngờ khi thấy mình thực ra vẫn còn thời gian để… thở.</p>
+    <h2>💼 Chọn việc làm thêm thông minh, không đuối sức</h2>
+    <p>Làm thêm là nhu cầu chính đáng – nhưng chọn sai việc thì “học hành đi luôn”.</p>
+    <p>Gợi ý một số công việc:</p>
+    <ul>
+      <li>Gia sư, trợ giảng, hỗ trợ nhập liệu online</li>
+      <li>Viết nội dung cho fanpage, blog</li>
+      <li>Bán hàng online, chạy sự kiện cuối tuần</li>
+      <li>Cộng tác viên truyền thông, dự án ngắn hạn</li>
+    </ul>
+    <div class="highlight">📌 Nguyên tắc: Việc đó phải phù hợp với thời gian biểu – và không khiến bạn kiệt sức.</div>
 
-  <div class="highlight">🎯 Gợi ý: dùng Google Calendar hoặc app ghi chú – và nhất định phải có “giờ nghỉ” như lịch học!</div>
+    <h2>🧠 Đừng bỏ quên sức khỏe tinh thần</h2>
+    <p>Học và làm mệt rồi, mà còn… stress nữa thì sống sao nổi?</p>
+    <p>Hãy thử:</p>
+    <ul>
+      <li>Ngủ ít nhất 6 tiếng mỗi ngày</li>
+      <li>Tập thể dục nhẹ: đi bộ, đạp xe, kéo giãn cơ</li>
+      <li>Viết vài dòng “Tôi đã làm được gì hôm nay” để tự động viên</li>
+      <li>Hạn chế so sánh bản thân với người khác trên mạng – mỗi người có tốc độ riêng</li>
+    </ul>
+    <div class="highlight">📌 Không ai có thể học và làm tốt nếu tinh thần đang “đuối”.</div>
 
-  <img src="https://img.freepik.com/free-photo/young-freelancer-studying-laptop-cafe_1303-17530.jpg" alt="Lên kế hoạch học và làm">
+    <h2>✅ Tổng kết: Không có công thức chung – nhưng bạn có thể tự tìm ra cách của mình</h2>
+    <p>Học đại học là học cách tự chủ. Mỗi người có một lịch trình, một mục tiêu khác nhau. Điều quan trọng không phải là làm thật nhiều, mà là biết chọn đúng cái cần làm – và làm nó trong tâm thế vững vàng.</p>
 
-  <h2>💼 Chọn việc làm thêm thông minh, không đuối sức</h2>
-  <p>Làm thêm là nhu cầu chính đáng – nhưng chọn sai việc thì “học hành đi luôn”.</p>
-  <p>Gợi ý một số công việc:</p>
-  <ul>
-    <li>Gia sư, trợ giảng, hỗ trợ nhập liệu online</li>
-    <li>Viết nội dung cho fanpage, blog</li>
-    <li>Bán hàng online, chạy sự kiện cuối tuần</li>
-    <li>Cộng tác viên truyền thông, dự án ngắn hạn</li>
-  </ul>
-  <div class="highlight">📌 Nguyên tắc: Việc đó phải phù hợp với thời gian biểu – và không khiến bạn kiệt sức.</div>
+    <p>Nếu bạn biết ưu tiên điều quan trọng, biết dừng lại khi mệt, và dám nói “không” với những thứ làm bạn quá tải – thì bạn đang sống một cuộc sống đại học chất lượng rồi đấy!</p>
 
-  <h2>🧠 Đừng bỏ quên sức khỏe tinh thần</h2>
-  <p>Học và làm mệt rồi, mà còn… stress nữa thì sống sao nổi?</p>
-  <p>Hãy thử:</p>
-  <ul>
-    <li>Ngủ ít nhất 6 tiếng mỗi ngày</li>
-    <li>Tập thể dục nhẹ: đi bộ, đạp xe, kéo giãn cơ</li>
-    <li>Viết vài dòng “Tôi đã làm được gì hôm nay” để tự động viên</li>
-    <li>Hạn chế so sánh bản thân với người khác trên mạng – mỗi người có tốc độ riêng</li>
-  </ul>
-  <div class="highlight">📌 Không ai có thể học và làm tốt nếu tinh thần đang “đuối”.</div>
+    <p>👉 Theo dõi thêm các bài viết kỹ năng thực chiến tại <a href="https://www.aiducate.net/blog/startup-money.html" target="_blank">Aiducate.net</a></p>
+    <p>👉 Xem clip chia sẻ kinh nghiệm thật từ sinh viên thật tại <a href="https://www.youtube.com/@Caunoigiangduongsunghiep" target="_blank">YouTube Aiducate</a></p>
+  </div>
 
-  <img src="https://img.freepik.com/free-photo/happy-young-student-girl-with-books_144627-48892.jpg" alt="Sinh viên vui vẻ và cân bằng cuộc sống">
-
-  <h2>✅ Tổng kết: Không có công thức chung – nhưng bạn có thể tự tìm ra cách của mình</h2>
-  <p>Học đại học là học cách tự chủ. Mỗi người có một lịch trình, một mục tiêu khác nhau. Điều quan trọng không phải là làm thật nhiều, mà là biết chọn đúng cái cần làm – và làm nó trong tâm thế vững vàng.</p>
-
-  <p>Nếu bạn biết ưu tiên điều quan trọng, biết dừng lại khi mệt, và dám nói “không” với những thứ làm bạn quá tải – thì bạn đang sống một cuộc sống đại học chất lượng rồi đấy!</p>
-
-  <p>👉 Theo dõi thêm các bài viết kỹ năng thực chiến tại <a href="https://aiducate.net" target="_blank">Aiducate.net</a></p>
-  <p>👉 Xem clip chia sẻ kinh nghiệm thật từ sinh viên thật tại <a href="https://www.youtube.com/@Aiducate" target="_blank">YouTube Aiducate</a></p>
-
+  <footer class="footer">
+    &copy; 2025 Aiducate.net – All rights reserved. | <a href="/legal/terms.html">Chính sách & Điều khoản</a>
+  </footer>
 </body>
 </html>
-
