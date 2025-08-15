@@ -27,8 +27,10 @@
     .menu > li{list-style:none;position:relative}
     .menu > li > a{padding:10px 12px;border-radius:8px;display:inline-block}
     .menu > li > a:hover{background:rgba(255,255,255,.06)}
-    .dropdown{position:absolute;left:0;top:42px;background:#0f1c2e;border:1px solid rgba(255,255,255,.08);border-radius:10px;min-width:280px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .dropdown{position:absolute;left:0;top:42px;background:#0f1c2e;border:1px solid rgba(255,255,255,.08);border-radius:10px;min-width:280px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:60}
     .menu > li:hover .dropdown{display:block}
+    .dropdown a{display:block;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .dropdown a:last-child{border-bottom:none}
     .cta-nav{background:var(--brand);padding:10px 14px;border-radius:10px;font-weight:600}
     .cta-nav:hover{filter:brightness(1.05)}
 
@@ -43,17 +45,37 @@
         flex-direction:column;
         padding:14px;
         border-top:1px solid rgba(255,255,255,.1);
-        /* --- FIX SCROLL ON MOBILE MENU --- */
+        /* --- FIX: scrollable & stable submenu --- */
         max-height: calc(100vh - 64px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
       }
       .menu.open{display:flex}
+      /* Mỗi mục menu chiếm full width để submenu xuống hàng đúng */
+      .menu > li{width:100%}
+      .menu > li > a{display:block;width:100%}
+
+      /* Submenu hiển thị theo cột, không chồng chéo */
       .dropdown{
-        position:static;display:block;border:none;box-shadow:none;background:transparent
+        position:static;
+        display:block;
+        border:none;
+        box-shadow:none;
+        background:transparent;
+        padding:0;
+        margin:4px 0 8px 0;
       }
-      .dropdown a{padding-left:30px}
+      .dropdown a{
+        display:block;
+        width:100%;
+        padding:10px 14px 10px 30px;  /* thụt vào để phân cấp */
+        border-bottom:1px solid rgba(255,255,255,.06);
+        white-space: normal;          /* cho phép xuống dòng */
+        word-break: break-word;       /* tránh tràn chữ dài */
+        line-height: 1.5;
+      }
+      .dropdown a:last-child{border-bottom:none}
       .hamburger{display:flex}
     }
 
