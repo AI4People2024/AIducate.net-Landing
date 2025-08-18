@@ -3,39 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Trang đang cập nhật – Aiducate.net</title>
-  <link rel="icon" href="../favicon.ico" />
+  <title>Hướng dẫn viết bài tiểu luận – Aiducate.net</title>
+  <link rel="icon" href="/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      --bg:#0f1c2e; --ink:#ffffff; --brand:#2b93e4; --accent:#4bc0c8; --muted:#d0e4ff;
+    :root {
+      --bg: #0f1c2e;
+      --ink: #ffffff;
+      --brand: #2b93e4;
+      --accent: #4bc0c8;
+      --card: #15243b;
+      --muted: #d0e4ff;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:20px;text-align:center}
-    img{width:140px;height:140px;object-fit:contain;margin-bottom:20px}
-    h1{font-size:26px;color:var(--brand);margin:10px 0}
-    p.lead{color:var(--muted);max-width:700px;margin:0 auto 20px;font-size:18px}
-    .section{max-width:800px;margin-top:30px;text-align:left}
-    .section h2{color:var(--accent);margin-bottom:6px}
-    .section p{color:var(--muted);margin:0 0 18px}
-    footer{margin-top:40px;opacity:.6;font-size:14px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 92%; max-width: 1180px; margin: auto; }
+    header {
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      opacity: 0.95;
+    }
+    h1 {
+      margin: 10px 0 6px;
+      font-size: 32px;
+      color: var(--brand);
+    }
+    .lead {
+      color: var(--muted);
+      max-width: 900px;
+      margin: 0 auto 10px;
+    }
+    .hero-img {
+      width: 100%;
+      max-width: 960px;
+      margin: 18px auto;
+      border-radius: 14px;
+      display: block;
+    }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 26px 0 10px;
+    }
+    .section-head h2 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 26px;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .thumb {
+      aspect-ratio: 16/9;
+      background: #0e1a2c url('/images/essay-placeholder.png') center/cover no-repeat;
+    }
+    .content {
+      padding: 14px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      background: rgba(43,147,228,.18);
+      color: #9ed6ff;
+      padding: 4px 8px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    .title {
+      color: #FFDF00;
+      font-weight: 700;
+      margin: 4px 0 6px;
+      line-height: 1.4;
+    }
+    .meta {
+      opacity: .7;
+      font-size: 13px;
+    }
+    .excerpt {
+      color: var(--muted);
+      margin: 8px 0 10px;
+      font-size: 15px;
+    }
+    .readmore {
+      margin-top: auto;
+      padding: 12px 14px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .readmore a {
+      color: #9ed6ff;
+      font-weight: 600;
+    }
+    .readmore span {
+      opacity: .6;
+      font-size: 13px;
+    }
+    footer {
+      margin: 34px 0 22px;
+      opacity: .7;
+      font-size: 14px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <img src="../logo.png" alt="Aiducate.net Logo">
-  <h1>Giới thiệu về Aiducate.net</h1>
-  <p class="lead">Cám ơn bạn đã ghé thăm!<br>Chúng tôi đang hoàn thiện tính năng này và sẽ cập nhật trong thời gian sớm nhất!</p>
+  <div class="container">
+    <header>
+      <img src="/logo.png" alt="Aiducate Logo">
+      <h1>Hướng dẫn viết bài tiểu luận</h1>
+      <p class="lead">Từ tránh lỗi sai cơ bản đến ứng dụng công nghệ – tất cả để bạn viết bài luận chất lượng cao và đạt điểm tốt ở đại học.</p>
+      <img class="hero-img" src="/images/essay-hero.webp" alt="Viết bài tiểu luận hiệu quả">
+    </header>
 
-  <div class="section">
-    <h2>🎯 Sứ mệnh</h2>
-    <p>Aiducate.net ra đời với mục tiêu đồng hành cùng sinh viên Việt Nam trên hành trình học tập và lập nghiệp, thông qua các công cụ AI và nội dung đào tạo giúp nâng cao kỹ năng mềm, kỹ năng số và định hướng nghề nghiệp.</p>
+    <div class="section-head">
+      <div>
+        <h2>Loạt bài viết hướng dẫn</h2>
+        <p>Từng bước viết bài luận chất lượng, đúng tiêu chí học thuật</p>
+      </div>
+    </div>
 
-    <h2>🚀 Tầm nhìn</h2>
-    <p>Trở thành nền tảng hỗ trợ học tập và phát triển nghề nghiệp hàng đầu tại Việt Nam, mang đến trải nghiệm cá nhân hóa, ứng dụng công nghệ hiện đại để mở rộng cơ hội việc làm và thành công cho sinh viên.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb"></div>
+        <div class="content">
+          <span class="tag">Mistakes</span>
+          <div class="title"><a href="#">Sai lầm khi viết tiểu luận</a></div>
+          <div class="meta">4 phút đọc • 2025-08-17</div>
+          <p class="excerpt">5-7 lỗi phổ biến như thiếu dàn ý, ngữ pháp lủng củng, viết lan man... và cách khắc phục cụ thể từ giảng viên chấm thi.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Tránh lỗi</span></div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"></div>
+        <div class="content">
+          <span class="tag">Tư duy</span>
+          <div class="title"><a href="#">Tầm quan trọng của kỹ năng viết luận</a></div>
+          <div class="meta">3 phút đọc • 2025-08-17</div>
+          <p class="excerpt">Viết luận giúp rèn tư duy phản biện, giao tiếp và nghiên cứu – kỹ năng quan trọng cho học tập và sự nghiệp.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Tầm nhìn</span></div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"></div>
+        <div class="content">
+          <span class="tag">Checklist</span>
+          <div class="title"><a href="#">Tiêu chí chấm điểm bài luận</a></div>
+          <div class="meta">5 phút đọc • 2025-08-17</div>
+          <p class="excerpt">Từ luận điểm rõ ràng đến trích dẫn chuẩn APA – bạn cần gì để đạt điểm cao? Có ví dụ bài điểm tốt và chưa tốt.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Tiêu chuẩn</span></div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"></div>
+        <div class="content">
+          <span class="tag">Kỹ năng</span>
+          <div class="title"><a href="#">Hướng dẫn viết luận từng bước</a></div>
+          <div class="meta">4 phút đọc • 2025-08-17</div>
+          <p class="excerpt">Từ chọn đề tài đến chỉnh sửa bản cuối – quy trình giúp bạn viết luận hiệu quả, tránh stress và đạt điểm tốt.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Thực hành</span></div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"></div>
+        <div class="content">
+          <span class="tag">AI Tools</span>
+          <div class="title"><a href="#">Dùng AI để hỗ trợ viết bài luận</a></div>
+          <div class="meta">3 phút đọc • 2025-08-17</div>
+          <p class="excerpt">ChatGPT, Grammarly, QuillBot... giúp tiết kiệm thời gian, nhưng cần dùng đúng cách để không mất chất riêng.</p>
+        </div>
+        <div class="readmore"><a href="#">Đọc tiếp →</a><span>Công nghệ</span></div>
+      </article>
+    </div>
+
+    <footer>
+      © 2025 Aiducate.net • Hướng dẫn kỹ năng học tập & viết học thuật • <a href="/legal/terms.html">Chính sách</a>
+    </footer> 
   </div>
-
-  <footer>
-    © 2025 Aiducate.net • Bình dân học vụ AI
-  </footer>
 </body>
 </html>
