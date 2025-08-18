@@ -69,6 +69,44 @@
       font-size: 0.9rem;
       color: var(--muted);
     }
+
+    /* ==== BỔ SUNG: style cho form đăng ký email ==== */
+    .form-box {
+      background-color: var(--card);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .form-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: .5rem;
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 320px;
+      max-width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button[type="submit"] {
+      padding: 10px 18px;
+      background-color: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover { filter: brightness(1.06); }
+    .note { color: var(--muted); font-size: .92rem; margin-top: .5rem; }
+    .hidden { display: none; }
+    /* ================================================ */
   </style>
 </head>
 <body>
@@ -142,6 +180,31 @@
       <p>🎁 Comment “CV CHUẨN NGHỀ” để nhận <strong>checklist viết CV theo từng ngành</strong> miễn phí!</p>
     </section>
 
+    <!-- ==== BỔ SUNG: Section đăng ký nhận checklist (không thay đổi phần cũ) ==== -->
+    <section aria-labelledby="signup-title">
+      <h2 id="signup-title">📩 Nhận Checklist CV Miễn Phí</h2>
+      <div class="form-box">
+        <p class="note">Nhập email của bạn để nhận tài liệu qua hộp thư. Bạn có thể hủy đăng ký bất cứ lúc nào.</p>
+        <form id="email-form" class="form-row" novalidate>
+          <label for="email" class="hidden">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="nhapemail@domain.com"
+            inputmode="email"
+            autocomplete="email"
+            required
+            pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+            aria-required="true"
+          />
+          <button type="submit" id="submit-btn">Đăng ký</button>
+        </form>
+        <p id="form-msg" class="note" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+    <!-- ====================================================================== -->
+
     <section>
       <h3>📚 Đọc thêm:</h3>
       <ul>
@@ -154,5 +217,60 @@
   <footer>
     © 2025 Aiducate.net – Hành trang kỹ năng cho thế hệ mới.
   </footer>
+
+  <!-- ==== BỔ SUNG: Script gửi email lên Google Sheet qua Apps Script ==== -->
+  <script>
+    (function () {
+      const form = document.getElementById('email-form');
+      const emailInput = document.getElementById('email');
+      const msg = document.getElementById('form-msg');
+      const btn = document.getElementById('submit-btn');
+
+      const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_GOOGLE_SCRIPT_ID/exec'; // TODO: thay bằng ID thật
+
+      function validateEmail(value) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(value).toLowerCase());
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        msg.textContent = '';
+        const email = emailInput.value.trim();
+
+        if (!validateEmail(email)) {
+          msg.textContent = '⚠️ Vui lòng nhập email hợp lệ.';
+          emailInput.focus();
+          return;
+        }
+
+        // Khoá nút khi đang gửi
+        btn.disabled = true;
+        btn.textContent = 'Đang gửi...';
+
+        try {
+          const formData = new FormData();
+          formData.append('email', email);
+
+          const res = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Apps Script web app thường dùng no-cors cho POST ẩn danh
+            body: formData
+          });
+
+          // Với no-cors, không đọc được response. Hiển thị thành công mặc định.
+          msg.textContent = '✅ Đăng ký thành công! Vui lòng kiểm tra hộp thư của bạn.';
+          form.reset();
+        } catch (err) {
+          console.error(err);
+          msg.textContent = '❌ Có lỗi xảy ra. Vui lòng thử lại sau.';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Đăng ký';
+        }
+      });
+    })();
+  </script>
+  <!-- ======================================================================= -->
 </body>
 </html>
