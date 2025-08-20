@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiêu Chí Nào Làm Nên Một CV Được Nhà Tuyển Dụng Đánh Giá Cao?</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0f1c2e; --ink:#ffffff; --brand:#2b93e4; --accent:#4bc0c8; --card:#15243b; --muted:#d0e4ff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.75;font-size:17px}
+    a{color:#9ed6ff;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:92%;max-width:1180px;margin:0 auto}
+    header{position:sticky;top:0;z-index:1000;background:rgba(15,28,46,.9);backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;align-items:center;gap:.75rem}
+    .logo img{height:36px}
+    .menu{display:flex;gap:16px;align-items:center}
+    .menu a{padding:8px 10px;border-radius:8px}
+    .menu a:hover{background:rgba(255,255,255,.06)}
+    .dropdown{position:relative}
+    .dropdown > a::after{content:"▾";margin-left:6px}
+    .dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:12px;min-width:220px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:8px;display:none}
+    .dropdown:hover .dropdown-menu{display:block}
+    .dropdown-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:normal}
+    .dropdown-menu a:hover{background:rgba(255,255,255,.06)}
+
+    /* Mobile nav */
+    .hamburger{display:none;flex-direction:column;gap:4px;background:transparent;border:0;cursor:pointer}
+    .hamburger span{width:24px;height:2px;background:#fff;display:block}
+    @media(max-width:980px){
+      .menu{display:none}
+      .hamburger{display:flex}
+      .mobile-panel{position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(15,28,46,.98);border-top:1px solid rgba(255,255,255,.06);padding:18px;overflow-y:auto;display:none}
+      .mobile-panel.open{display:block}
+      .mobile-panel a{display:block;padding:12px 10px;border-radius:10px}
+      .mobile-sub{padding-left:30px}
+    }
+
+    /* Hero */
+    .hero{padding:42px 0 10px}
+    .eyebrow{color:var(--brand);text-transform:uppercase;letter-spacing:.12em;font-weight:700;font-size:.8rem}
+    h1{color:var(--ink);font-size:clamp(28px,4vw,38px);line-height:1.25;margin:.35rem 0 1rem}
+    .lead{color:var(--muted);max-width:780px}
+    .cta{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--brand);color:#fff;padding:10px 16px;border-radius:10px;font-weight:600;border:0;cursor:pointer}
+    .btn:hover{filter:brightness(1.05)}
+
+    /* Content */
+    section{margin:28px 0}
+    h2{color:var(--accent);font-size:1.25rem;margin:0 0 .6rem}
+    .img{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:16px}
+    .meta{color:var(--muted);font-size:.9rem}
+
+    footer{border-top:1px solid rgba(255,255,255,.06);margin-top:32px}
+    .footer{padding:20px 0;color:var(--muted);font-size:.92rem;text-align:center}
+  </style>
+  <script>
+    // Mobile menu toggle
+    function toggleMenu(){
+      document.getElementById('mobilePanel').classList.toggle('open');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <img src="/logo.png" alt="Aiducate.net"/>
+        <strong>Aiducate.net</strong>
+      </div>
+      <nav class="menu">
+        <a href="#">Trang chủ</a>
+        <div class="dropdown">
+          <a href="#">Chủ đề</a>
+          <div class="dropdown-menu">
+            <a href="#cv">CV & Hồ sơ</a>
+            <a href="#phongvan">Phỏng vấn</a>
+            <a href="#kynangmem">Kỹ năng mềm</a>
+            <a href="#kynangso">Kỹ năng số</a>
+          </div>
+        </div>
+        <a href="#tai-nguyen">Tài nguyên</a>
+        <a href="#ve-chung-toi">Về chúng tôi</a>
+      </nav>
+      <button class="hamburger" aria-label="Mở menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobilePanel" class="mobile-panel">
+      <a href="#">Trang chủ</a>
+      <a href="#">Chủ đề</a>
+      <div class="mobile-sub">
+        <a href="#cv">CV & Hồ sơ</a>
+        <a href="#phongvan">Phỏng vấn</a>
+        <a href="#kynangmem">Kỹ năng mềm</a>
+        <a href="#kynangso">Kỹ năng số</a>
+      </div>
+      <a href="#tai-nguyen">Tài nguyên</a>
+      <a href="#ve-chung-toi">Về chúng tôi</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="eyebrow">CV & HỒ SƠ</div>
+      <h1>✨ Tiêu Chí Nào Làm Nên Một CV Được Nhà Tuyển Dụng Đánh Giá Cao?</h1>
+      <p class="lead">⏳ Bạn có biết rằng nhà tuyển dụng chỉ dành <strong>6 giây</strong> để quyết định giữ hay bỏ CV của bạn không? Chỉ 6 giây thôi, CV của bạn phải đủ “chất” để khiến họ muốn đọc tiếp và cân nhắc bạn vào vòng phỏng vấn. Cùng khám phá 7 tiêu chí quan trọng mà nhà tuyển dụng luôn để mắt đến nhé! 💼✨</p>
+      <div class="cta">
+        <a class="btn" href="#">Bắt đầu đọc</a>
+      </div>
+    </section>
+
+    <!-- Hero image -->
+    <img class="img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop" alt="Sinh viên chuẩn bị CV trên bàn làm việc" />
+
+    <!-- Content sections from Step 3 (giữ nguyên ý, thêm hình minh họa) -->
+    <section id="tieu-chi-1">
+      <h2>1️⃣ Rõ ràng & Ngắn gọn – “Less is more”</h2>
+      <p>📄 Một CV tốt không cần phải dài lê thê 2–3 trang. Thực tế, HR thích những CV <strong>gọn trong 1 trang A4</strong> – dễ nhìn, súc tích và đi thẳng vào trọng tâm.</p>
+      <div class="grid">
+        <div class="card"><strong>❌ CV kém:</strong> “Đã tham gia nhiều hoạt động ngoại khóa, học hỏi nhiều kỹ năng trong quá trình học.”</div>
+        <div class="card"><strong>✅ CV tốt:</strong> “CLB Kinh doanh (2023): Quản lý sự kiện 500 người tham dự.”</div>
+      </div>
+      <p>👉 Bí kíp: Viết ngắn, rõ, dùng bullet point. Càng “đi thẳng vào vấn đề”, CV của bạn càng dễ ghi điểm 🎯.</p>
+      <img class="img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" alt="Bố cục CV gọn gàng rõ ràng" />
+    </section>
+
+    <section>
+      <h2>2️⃣ Cá nhân hóa cho từng vị trí</h2>
+      <p>Một trong những lỗi “toang” 😵 chính là dùng <strong>1 CV cho tất cả công việc</strong>. Tin mình đi, HR nhận ra ngay luôn!</p>
+      <p>✨ Mẹo: Đọc kỹ JD (job description), gạch chân từ khóa và khéo léo “cấy” chúng vào CV. Ví dụ: JD yêu cầu “kỹ năng phân tích dữ liệu” → highlight ngay dự án hoặc môn học Data Analysis mà bạn từng làm.</p>
+      <p>💡 Đây chính là “chìa khóa vàng” giúp CV của bạn nổi bật hơn 1000 CV copy-paste khác.</p>
+      <img class="img" src="https://images.unsplash.com/photo-1561089489-f13d5e730d72?q=80&w=1600&auto=format&fit=crop" alt="Cá nhân hóa CV theo mô tả công việc" />
+    </section>
+
+    <section>
+      <h2>3️⃣ Có số liệu minh chứng thành tích</h2>
+      <p>Con số = sức mạnh! 🔥</p>
+      <div class="grid">
+        <div class="card"><strong>❌ CV kém:</strong> “Biết lập trình.”</div>
+        <div class="card"><strong>✅ CV tốt:</strong> “Tối ưu hóa code, giảm <strong>30%</strong> thời gian xử lý hệ thống.”</div>
+      </div>
+      <p>Khi có số liệu cụ thể, nhà tuyển dụng sẽ dễ hình dung giá trị thật sự bạn mang lại, thay vì chỉ nghe những câu mơ hồ. 📊</p>
+      <img class="img" src="https://images.unsplash.com/photo-1551281044-8af4e6624178?q=80&w=1600&auto=format&fit=crop" alt="Minh chứng thành tích bằng số liệu" />
+    </section>
+
+    <section>
+      <h2>4️⃣ Thiết kế chuyên nghiệp, dễ đọc</h2>
+      <p>Đừng biến CV thành “tác phẩm nghệ thuật khó hiểu” nhé 🎨. Một CV đẹp = rõ ràng, hiện đại, dễ đọc.</p>
+      <ul>
+        <li>✔️ Font chữ gọn gàng (Arial, Inter, Calibri…)</li>
+        <li>✔️ Layout chuẩn: Thông tin cá nhân – Mục tiêu – Học vấn – Kinh nghiệm – Kỹ năng – Dự án</li>
+        <li>✔️ Màu sắc vừa đủ, nhấn nhá nhẹ tạo điểm riêng</li>
+      </ul>
+      <img class="img" src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1600&auto=format&fit=crop" alt="Thiết kế CV tối giản, chuyên nghiệp" />
+    </section>
+
+    <section>
+      <h2>5️⃣ Thể hiện điểm mạnh cá nhân</h2>
+      <p>Sinh viên mới ra trường thiếu kinh nghiệm? Không sao hết! 💪 CV đâu chỉ toàn “kinh nghiệm làm việc chính thức”. Bạn hoàn toàn có thể tận dụng:</p>
+      <ul>
+        <li>🎓 Dự án cá nhân: làm app, blog, video, nghiên cứu</li>
+        <li>👥 Hoạt động CLB, tình nguyện</li>
+        <li>🛠️ Công việc part-time</li>
+        <li>🎯 Thành tích học tập</li>
+      </ul>
+      <p>Ví dụ: “Phụ trách Marketing cho CLB, tăng fanpage từ <strong>2k → 10k</strong> followers trong 6 tháng.” 😍</p>
+      <img class="img" src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1600&auto=format&fit=crop" alt="Sinh viên trình bày dự án cá nhân" />
+    </section>
+
+    <section>
+      <h2>6️⃣ Không lỗi chính tả & trình bày nhất quán</h2>
+      <p>Một lỗi chính tả nhỏ thôi cũng có thể “dập tắt” ấn tượng của nhà tuyển dụng 😬. 👉 Giải pháp: nhờ bạn bè đọc lại, hoặc dùng Google Docs/Grammarly.</p>
+      <p>💡 Mẹo nhỏ: Đọc CV <em>từ cuối lên đầu</em> – dễ phát hiện lỗi sai hơn nhiều!</p>
+      <img class="img" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1600&auto=format&fit=crop" alt="Chỉnh sửa, soát lỗi CV" />
+    </section>
+
+    <section>
+      <h2>7️⃣ Ngôn ngữ hành động – cho thấy bạn “làm được việc”</h2>
+      <p>Thay vì mấy từ nhạt nhòa kiểu “tham gia, biết”, hãy nâng cấp bằng động từ mạnh mẽ hơn 💥: Quản lý, Phát triển, Tối ưu hóa, Triển khai, Phân tích…</p>
+      <p>Ví dụ: “Quản lý team 5 người, triển khai chiến dịch content, đạt <strong>50.000</strong> lượt tiếp cận trong 2 tuần.” 🚀</p>
+    </section>
+
+    <section>
+      <h2>🧠 Kết lại – CV “đỉnh” = CV “đúng”</h2>
+      <div class="card">
+        <p>Một bản CV chuẩn không cần màu mè hoa lá hẹ 🌸 mà chỉ cần:</p>
+        <ul>
+          <li>✅ Ngắn gọn – Rõ ràng – Cá nhân hóa</li>
+          <li>✅ Có số liệu cụ thể</li>
+          <li>✅ Thiết kế chuyên nghiệp, dễ đọc</li>
+          <li>✅ Không lỗi chính tả</li>
+          <li>✅ Thể hiện được điểm mạnh riêng</li>
+        </ul>
+        <p>Nhớ nhé, CV chưa chắc giúp bạn được tuyển ngay, nhưng chắc chắn là <strong>tấm vé đầu tiên</strong> để bạn gặp nhà tuyển dụng và chứng minh bản thân.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>📚 Đọc thêm</h2>
+      <div class="grid">
+        <a class="card" href="https://www.aiducate.net/blog/career_orientation.html"><strong>Hướng dẫn chuẩn bị hồ sơ xin việc chi tiết</strong><div class="meta">aiducate.net</div></a>
+        <a class="card" href="https://www.aiducate.net/blog/startup-money.html"><strong>Cách sinh viên kiếm tiền & khởi nghiệp</strong><div class="meta">aiducate.net</div></a>
+      </div>
+      <p class="meta">📺 Xem thêm video hướng dẫn tại kênh YouTube: <a href="https://youtube.com/@CaunoiGiangduongSunghiep">Aiducate – Cầu Nối Giảng Đường Sự Nghiệp</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">© 2025 Aiducate.net – Hành trang kỹ năng cho thế hệ mới. • <a href="/legal/terms.html">Điều khoản</a> • <a href="#">Bảo mật</a></div>
+  </footer>
+</body>
+</html>
