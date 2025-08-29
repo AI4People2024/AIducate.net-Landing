@@ -1,1 +1,164 @@
-Landing page cho 1 Allstars
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1-AllStars: Cơ hội học tập – thực tập – làm thêm cho sinh viên</title>
+  <meta name="description" content="Cơ hội thực tập thực chiến, làm thêm thu nhập và học các khóa sáng tạo nội dung tại 1-AllStars. Địa chỉ: 13 Nguyễn Quang Bích, Q. Tân Bình (gần ga T3 Tân Sơn Nhất)."/>
+  <style>
+    :root{--bg:#0f1c2e;--fg:#ffffff;--brand:#2b93e4;--accent:#4bc0c8;--warning:#e48b2b;--success:#22c55e;--shadow:0 6px 20px rgba(0,0,0,.25)}
+    html,body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,Roboto,Segoe UI,Arial,sans-serif;font-size:15px}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    .hero{display:grid;gap:12px;align-items:center;grid-template-columns:1.2fr .8fr}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(75,192,200,.18);border:1px solid rgba(75,192,200,.45);color:#d9feff;font-size:12px}
+    h1{font-size:30px;line-height:1.2;margin:6px 0 8px;color:var(--accent)}
+    h2{color:var(--brand);margin:26px 0 10px;font-size:22px}
+    p.lead{opacity:.95}
+    .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--brand));color:#001826;padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:var(--shadow);text-decoration:none}
+    .muted{opacity:.75}
+    /* Callouts */
+    .callouts{display:grid;gap:16px}
+    .callout{border:1px solid rgba(75,192,200,.35);background:rgba(43,147,228,.08);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
+    .callout h3{margin:0 0 6px;color:var(--accent)}
+    .callout ul{margin:8px 0 0 16px}
+    .callout.warn{border-left:6px solid var(--warning);background:rgba(228,139,43,.10)}
+    .callout.income{border-left:6px solid var(--success);background:rgba(34,197,94,.08)}
+    .callout.month{border-left:6px solid var(--brand)}
+    /* Image cards */
+    .grid{display:grid;gap:12px}
+    .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+    .grid.cols-4>.card{height:100%}
+    /* Force exactly 2 rows (with 8 items it will be 2x4 on desktop) */
+    @media(max-width:1024px){.hero{grid-template-columns:1fr}.grid.cols-4{grid-template-columns:repeat(2,1fr)}}
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    .card img{width:100%;height:160px;object-fit:cover;display:block}
+    .card p{margin:8px 10px 12px;font-size:14px;opacity:.9}
+    /* Lists */
+    ul,ol{padding-left:18px}
+    .section{margin-top:22px}
+  </style>
+</head>
+<body>
+  <header class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="/logo_1AS_ESG.png" alt="1AllStars & ESG Logo" style="height:48px"/>
+      <span class="badge">🌟 Cơ hội thật – Dành cho sinh viên</span>
+    </div>
+    <a class="cta" href="/dang-ky">Đăng ký ngay</a>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>1-AllStars: Cơ hội học tập – thực tập – làm thêm dành cho sinh viên</h1>
+        <p class="lead">Hiện nay, <strong>1-AllStars</strong> đang tổ chức <strong>4 phòng live</strong> tại kho hàng gần ga T3 sân bay Tân Sơn Nhất, địa chỉ <strong>13 Nguyễn Quang Bích, Quận Tân Bình, TP.HCM</strong> (có hình ảnh đính kèm). Đây là không gian thực hành thực tế cho các bạn yêu thích <em>livestream, vận hành live, quay video xây kênh</em> hoặc <em>hợp tác affiliate</em>. 💼📸</p>
+        <p class="muted">Hãy chọn hình thức phù hợp: Thực tập thực chiến • Làm thêm thu nhập • Tham gia khóa học chuyên sâu.</p>
+        <div style="margin-top:10px"><a class="cta" href="/dang-ky">Đăng ký ngay</a></div>
+      </div>
+      <div class="callouts">
+        <div class="callout warn">
+          <h3>📍 Địa điểm</h3>
+          <p>Kho 1-AllStars – gần ga T3 sân bay Tân Sơn Nhất<br/>13 Nguyễn Quang Bích, Q. Tân Bình, TP.HCM</p>
+        </div>
+        <div class="callout">
+          <h3>🎯 Lựa chọn hợp tác</h3>
+          <ul>
+            <li>Thực tập thực chiến 3 tháng</li>
+            <li>Làm thêm trong ngành kinh doanh trực tuyến</li>
+            <li>Tham gia các khóa học chuyên sâu</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 image cards for live rooms: 2 rows x 4 columns on desktop -->
+    <section class="section">
+      <h2>Hình ảnh thực tế phòng live</h2>
+      <div class="grid cols-4">
+        <div class="card"><img src="/images/1AS/1AS-liveroom1.jpg" alt="Phòng live 1-AllStars 01"><p>Góc set livestream số 1</p></div>
+        <div class="card"><img src="/images/1AS/1AS-liveroom2.jpg" alt="Phòng live 1-AllStars 02"><p>Bàn host và ánh sáng</p></div>
+        <div class="card"><img src="/images/1AS/1AS-liveroom3.jpg" alt="Phòng live 1-AllStars 03"><p>Thiết bị quay – thu âm</p></div>
+        <div class="card"><img src="/images/1AS/1AS-liveroom4.jpg" alt="Phòng live 1-AllStars 04"><p>Kho góc trưng bày sản phẩm</p></div>
+        <div class="card"><img src="/images/1AS/1AS-liveroom5.jpg" alt="Phòng live 1-AllStars 05"><p>Khu vực vận hành đơn hàng</p></div>
+        <div class="card"><img src="/images/1AS/1AS-liveroom6.jpg" alt="Phòng live 1-AllStars 06"><p>Backdrop quay video ngắn</p></div>
+        <div class="card"><img src="/images/1AS/1AS-liveroom7.jpg" alt="Phòng live 1-AllStars 07"><p>Không gian hậu kỳ – dựng phim</p></div>
+        <div class="card"><img src="/images/1AS/1AS-liveroom8.jpg" alt="Phòng live 1-AllStars 08"><p>Phòng họp team nội dung</p></div>
+      </div>
+    </section>
+
+    <!-- Thực tập thực chiến -->
+    <section id="thuc-tap" class="section">
+      <h2>1) Thực tập thực chiến – vừa học, vừa làm, vừa có thu nhập 🧑🏽‍🎓💡</h2>
+      <p>Dành cho sinh viên quan tâm <strong>truyền thông</strong>, <strong>sáng tạo nội dung</strong> và <strong>kinh doanh trực tuyến</strong>.</p>
+      <ul>
+        <li>Nộp hồ sơ CV theo link đính kèm.</li>
+        <li>Công ty đánh giá và mời phỏng vấn tại phòng live. Nếu đạt, bạn tham gia <strong>3 tháng thực tập</strong>:</li>
+      </ul>
+
+      <div class="callout month">
+        <h3>📆 Lộ trình 3 tháng thực tập</h3>
+        <ul>
+          <li><strong>Tháng 1 –</strong> Đào tạo và thực tập nhận thức, hướng nghiệp song song: trải nghiệm môi trường truyền thông, sáng tạo nội dung, kinh doanh online. <em>Hoàn thành tháng 1 → ký xác nhận thực tập theo kết quả.</em></li>
+          <li><strong>Tháng 2 –</strong> Thực tập định hướng nghề nghiệp: tiếp tục trải nghiệm môi trường truyền thông – nội dung – kinh doanh online. <em>Hoàn thành tháng 2 → xác nhận thực tập loại Giỏi/Xuất sắc + học bổng khóa học trong tháng.</em></li>
+          <li><strong>Tháng 3 –</strong> Thực tập định hướng nâng cao: tham dự các dự án thực tế lớn. <em>Hoàn thành tháng 3 → xác nhận loại Giỏi/Xuất sắc + học bổng 2 tháng + trợ cấp dự án khi hoàn thành tốt.</em></li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <h3>🎁 Quyền lợi thêm cho thực tập sinh</h3>
+        <ul>
+          <li>Voucher giảm giá các khóa: sáng tạo nội dung, xây kênh bán hàng, quy trình sản xuất phim.</li>
+          <li>Tham gia chương trình gọi vốn sản xuất phim cùng KOL/KOC và đạo diễn/sản xuất phim nổi tiếng do 1-AllStars tổ chức.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Làm thêm -->
+    <section id="lam-them" class="section">
+      <h2>2) Làm thêm – kiếm thu nhập hấp dẫn 💼💸</h2>
+      <p>Dành cho sinh viên muốn tìm kiếm cơ hội làm thêm và hợp tác kinh doanh online.</p>
+      <ul>
+        <li>Gửi CV qua link đính kèm.</li>
+        <li>Phỏng vấn trực tiếp tại phòng live. Nếu đạt, tùy kỹ năng sẽ có hình thức hợp tác phù hợp.</li>
+      </ul>
+
+      <div class="callout income">
+        <h3>💰 Mức thu nhập tham khảo</h3>
+        <ul>
+          <li>Host livestream: <strong>25–50k–100k/giờ</strong> (tùy vai trò và khung giờ).</li>
+          <li>Biên kịch kịch bản TikTok: <strong>100–200k/kịch bản</strong>.</li>
+          <li>Quay video: <strong>trợ cấp 500k/ngày</strong>.</li>
+          <li>Affiliate: hợp tác kinh doanh theo hoa hồng, trung bình <strong>5–10%/sản phẩm</strong> (tùy sản phẩm và thời điểm).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Học tập -->
+    <section id="hoc-tap" class="section">
+      <h2>3) Học tập – phát triển kỹ năng 📚🚀</h2>
+      <p>Tham gia các khóa học về sáng tạo nội dung, xây kênh bán hàng, quy trình sản xuất phim chuyên nghiệp và chương trình gọi vốn sản xuất phim do 1-AllStars tổ chức cùng KOL/KOC và đạo diễn/sản xuất phim.</p>
+
+      <div class="callout warn">
+        <h3>🎉 Ưu đãi cho sinh viên</h3>
+        <ul>
+          <li>Đăng ký theo link để nhận <strong>ưu đãi tới 20%</strong> khi tham dự trực tiếp.</li>
+          <li>Đăng ký theo link để nhận <strong>voucher miễn phí 100% khoá học online</strong> (số lượng hạn chế, ưu tiên đăng ký sớm).</li>
+          <li><strong>Lịch khai giảng tháng 9–12</strong>: xem file đính kèm.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA (single button) -->
+    <section class="section" id="dang-ky">
+      <h2>Đăng ký ngay hôm nay ✍️</h2>
+      <p>Điền thông tin theo link đính kèm để nộp CV hoặc đăng ký khóa học. Đội ngũ 1-AllStars sẽ liên hệ hẹn lịch phỏng vấn hoặc xác nhận suất học.</p>
+      <a class="cta" href="/dang-ky">Đăng ký ngay</a>
+      <p class="muted" style="margin-top:8px">* Vui lòng đính kèm link chính thức của công ty khi triển khai trên website.</p>
+    </section>
+  </main>
+
+  <footer class="wrap" style="text-align:center;opacity:.8;margin-top:20px">
+    <p>© 1-AllStars x ESG</p>
+  </footer>
+</body>
+</html>
