@@ -2,40 +2,234 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Trang đang cập nhật – Aiducate.net</title>
-  <link rel="icon" href="../favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aiducate.net – Bình dân học vụ AI</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --bg:#0f1c2e; --ink:#ffffff; --brand:#2b93e4; --accent:#4bc0c8; --muted:#d0e4ff;
+      --bg:#0f1c2e; --ink:#ffffff; --brand:#2b93e4; --accent:#4bc0c8; --card:#15243b; --muted:#d0e4ff;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:20px;text-align:center}
-    img{width:140px;height:140px;object-fit:contain;margin-bottom:20px}
-    h1{font-size:26px;color:var(--brand);margin:10px 0}
-    p.lead{color:var(--muted);max-width:700px;margin:0 auto 20px;font-size:18px}
-    .section{max-width:800px;margin-top:30px;text-align:left}
-    .section h2{color:var(--accent);margin-bottom:6px}
-    .section p{color:var(--muted);margin:0 0 18px}
-    footer{margin-top:40px;opacity:.6;font-size:14px}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .container{width:92%;max-width:1180px;margin:auto}
+
+    /* HEADER / NAV */
+    .nav-wrap{position:sticky;top:0;background:rgba(15,28,46,.9);backdrop-filter:blur(6px);z-index:50;border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:120px;height:120px;object-fit:contain}
+    .brand span{font-weight:700;letter-spacing:.3px}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu > li{list-style:none;position:relative}
+    .menu > li > a{padding:10px 12px;border-radius:8px;display:inline-block}
+    .menu > li > a:hover{background:rgba(255,255,255,.06)}
+    .dropdown{position:absolute;left:0;top:42px;background:#0f1c2e;border:1px solid rgba(255,255,255,.08);border-radius:10px;min-width:280px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:60}
+    .menu > li:hover .dropdown{display:block}
+    .dropdown a{display:block;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .dropdown a:last-child{border-bottom:none}
+    .cta-nav{background:var(--brand);padding:10px 14px;border-radius:10px;font-weight:600}
+    .cta-nav:hover{filter:brightness(1.05)}
+
+    /* MOBILE */
+    .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+    .hamburger span{width:24px;height:2px;background:#fff}
+    @media (max-width: 980px){
+      .menu{
+        display:none;
+        position:absolute;left:0;right:0;top:64px;
+        background:#0f1c2e;
+        flex-direction:column;
+        padding:14px;
+        border-top:1px solid rgba(255,255,255,.1);
+        /* --- FIX: scrollable & stable submenu --- */
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+      }
+      .menu.open{display:flex}
+      /* Mỗi mục menu chiếm full width để submenu xuống hàng đúng */
+      .menu > li{width:100%}
+      .menu > li > a{display:block;width:100%}
+
+      /* Submenu hiển thị theo cột, không chồng chéo */
+      .dropdown{
+        position:static;
+        display:block;
+        border:none;
+        box-shadow:none;
+        background:transparent;
+        padding:0;
+        margin:4px 0 8px 0;
+      }
+      .dropdown a{
+        display:block;
+        width:100%;
+        padding:10px 14px 10px 30px;  /* thụt vào để phân cấp */
+        border-bottom:1px solid rgba(255,255,255,.06);
+        white-space: normal;          /* cho phép xuống dòng */
+        word-break: break-word;       /* tránh tràn chữ dài */
+        line-height: 1.5;
+      }
+      .dropdown a:last-child{border-bottom:none}
+      .hamburger{display:flex}
+    }
+
+    /* HERO */
+    .hero{padding:56px 0 24px;text-align:center}
+    .hero h1{font-size:34px;margin:10px 0;color:var(--brand)}
+    .hero p.lead{opacity:.9;max-width:820px;margin:10px auto 0}
+    .hero .cta{margin-top:18px;display:inline-block;background:var(--brand);padding:14px 20px;border-radius:10px;font-weight:700}
+    .hero .cta:hover{filter:brightness(1.05)}
+    .hero img.hero-img{width:100%;max-width:760px;margin:22px auto;border-radius:14px;display:block}
+
+    /* SECTIONS */
+    h2.section-title{color:var(--accent);margin:28px 0 8px;font-size:26px}
+    .bullets ul{margin:12px 0 0 0;padding-left:20px}
+    .bullets li{margin:8px 0}
+
+    /* TOOL CARDS */
+    .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:16px}
+    .tool-card{background:var(--card);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.06)}
+    .tool-card h3{margin:6px 0 8px;color:var(--brand);font-size:18px}
+    .tool-card p{margin:0 0 12px;color:var(--muted);font-size:15px}
+    .tool-card a{display:inline-block;background:var(--brand);padding:10px 14px;border-radius:8px;font-weight:600}
+    .tool-card a.secondary{background:transparent;border:1px solid rgba(255,255,255,.15)}
+
+    /* CTA STRIP */
+    .cta-strip{margin:34px 0;background:linear-gradient(90deg, var(--brand), #58d4f3);padding:22px;border-radius:14px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
+    .cta-strip strong{font-size:18px}
+
+    /* FOOTER */
+    footer{margin:36px 0 22px;opacity:.7;font-size:14px}
   </style>
 </head>
 <body>
-  <img src="../logo.png" alt="Aiducate.net Logo">
-  <h1>Giới thiệu về Aiducate.net</h1>
-  <p class="lead">Cám ơn bạn đã ghé thăm!<br>Chúng tôi đang hoàn thiện tính năng này và sẽ cập nhật trong thời gian sớm nhất!</p>
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="/logo.png" alt="Aiducate Logo" />
+        <span>Aiducate.net</span>
+      </a>
 
-  <div class="section">
-    <h2>🎯 Sứ mệnh</h2>
-    <p>Aiducate.net ra đời với mục tiêu đồng hành cùng sinh viên Việt Nam trên hành trình học tập và lập nghiệp, thông qua các công cụ AI và nội dung đào tạo giúp nâng cao kỹ năng mềm, kỹ năng số và định hướng nghề nghiệp.</p>
+      <div class="hamburger" id="hamburger" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </div>
 
-    <h2>🚀 Tầm nhìn</h2>
-    <p>Trở thành nền tảng hỗ trợ học tập và phát triển nghề nghiệp hàng đầu tại Việt Nam, mang đến trải nghiệm cá nhân hóa, ứng dụng công nghệ hiện đại để mở rộng cơ hội việc làm và thành công cho sinh viên.</p>
+      <ul class="menu" id="menu">
+        <li><a href="/about.html">Giới thiệu</a></li>
+
+        <li>
+          <a href="/Tools/index.html">Công cụ AI ▾</a>
+          <div class="dropdown">
+            <a href="/Tools/essay-writer.html">✍️ Công cụ viết luận và chấm bài luận </a>
+            <a href="/Tools/CV-reviewer.html">📝 Công cụ Chấm điểm CV </a>
+            <a href="/Tools/Test_intelligence.html">📄 Test tính cách, trí thông minh chọn nghề</a>
+            <a href="/Tools/salary-checker.html">📊 Tra cứu mức lương theo ngành nghề </a>
+            <a href="/Tools/learn-ai.html">🎓 Khóa học kỹ năng số, kỹ năng mềm</a>
+          </div>
+        </li>
+
+        <li>
+          <a href="/career/index.html"> Cơ hội thực tập & kiếm tiền ▾</a>
+          <div class="dropdown">
+            <a href="/career/earning_startups.html">🧠 Cơ hội kiếm tiền & khởi nghiệp </a>
+            <a href="/career/Promotions_scholars.html">🎯 Thông tin khuyến mãi, học bổng</a>
+            <a href="/pages/LP_1AS_co_hoi_nghe_nghiep.html">🧳 Thông tin Thực tập, Việc làm</a>
+            <a href="/career/Courses.html">🗂️ Khóa học nâng cao kỹ năng </a>
+            <a href="/verify/index.html">🎓 Tra cứu chứng nhận thực tập</a>
+          </div>
+        </li>
+
+        <li>
+          <a href="/blog/index.html">Blog Học tập & Phát triển ▾</a>
+          <div class="dropdown">
+            <a href="/blog/High_score_essay.html">✍️ Viết luận điểm cao</a>
+            <a href="/blog/career_orientation.html">🧭 Chọn nghề & hướng nghiệp</a>
+            <a href="/blog/startup-money.html">💡 Khởi nghiệp & kiếm tiền</a>
+            <a href="/blog/relax-travel.html">🧠 Góc giải trí và du lịch</a>
+          </div>
+        </li>
+
+        <li><a href="/community/index.html">Cộng đồng</a></li>
+        <li><a href="/account/">Tài khoản</a></li>
+        <li><a class="cta-nav" href="/support/">Trợ giúp</a></li>
+      </ul>
+    </div>
   </div>
 
-  <footer>
-    © 2025 Aiducate.net • Bình dân học vụ AI
+  <!-- HERO -->
+  <section class="hero container">
+    <h1>Bình dân học vụ AI cho sinh viên bận rộn</h1>
+    <p class="lead">Viết luận thông minh – học nhẹ nhàng – điểm cao hơn. Công cụ AI & nội dung micro-learning giúp bạn cải thiện nhanh kỹ năng học thuật và nghề nghiệp.</p>
+    <a class="cta" href="/tools/essay-writer.html">✍️ Bắt đầu với công cụ Viết luận</a>
+    <img class="hero-img" src="/images/Deadline_student.png" alt="Sinh viên áp lực deadline" />
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="container bullets">
+    <h2 class="section-title">❗ Bạn có đang rơi vào những tình huống này?</h2>
+    <ul>
+      <li>⏰ Lịch học và làm thêm kín mít, không đủ thời gian viết bài luận</li>
+      <li>🧠 Viết theo cảm tính, chưa có phương pháp rõ ràng</li>
+      <li>🔍 Góp nhặt thông tin từ Google nhưng bài thiếu logic</li>
+      <li>🤖 Dùng ChatGPT nhưng không biết prompt, nội dung sai lệch</li>
+    </ul>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="container">
+    <h2 class="section-title">🚀 Hệ sinh thái công cụ học tập AI</h2>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3>✍️ Viết & chấm điểm bài luận</h3>
+        <p>Công cụ viết luận với AI & phản hồi tức thì.</p>
+        <a href="/tools/essay-writer.html">Dùng công cụ</a>
+        <a class="secondary" href="/tools/essay-grader.html" style="margin-left:8px;">Chấm bài</a>
+      </div>
+      <div class="tool-card">
+        <h3>🧠 Trắc nghiệm hướng nghiệp</h3>
+        <p>Khám phá sở trường và nghề phù hợp.</p>
+        <a href="https://mi-test.aiducate.net">Làm test ngay</a>
+      </div>
+      <div class="tool-card">
+        <h3>🤖 Bình dân học vụ AI</h3>
+        <p>Micro-learning các công cụ AI cho sinh viên.</p>
+        <a href="https://learn.aiducate.net">Vào học</a>
+      </div>
+      <div class="tool-card">
+        <h3>✨ Chấm điểm & góp ý CV</h3>
+        <p>Đánh giá CV và gợi ý cải thiện chuyên nghiệp.</p>
+        <a href="/tools/cv-reviewer.html">Xem demo</a>
+      </div>
+      <div class="tool-card">
+        <h3>🔍 Tra cứu mức lương</h3>
+        <p>Dữ liệu thị trường theo ngành nghề & vị trí.</p>
+        <a href="/tools/salary-checker.html">Khám phá</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <div class="container cta-strip">
+    <strong>✅ Hãy để AI đồng hành cùng bạn trong học tập!</strong>
+    <a class="cta" href="/tools/essay-writer.html" style="background:#103a63;border-radius:10px;padding:12px 16px;">Dùng thử miễn phí</a>
+  </div>
+
+  <footer class="container">
+    <div>© Aiducate.net • “Bình dân học vụ AI” • <a href="/legal/privacy.html">Chính sách bảo mật</a> • <a href="/legal/terms.html">Điều khoản</a></div>
   </footer>
+
+  <script>
+    // Toggle mobile menu
+    const burger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    burger.addEventListener('click', () => menu.classList.toggle('open'));
+  </script>
 </body>
 </html>
