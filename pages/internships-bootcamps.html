@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Bootcamp Nghề nghiệp – ESG-1AllStars</title>
+  <link rel="icon" href="/favicon.ico"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#0f1c2e; --ink:#ffffff; --brand:#2b93e4; --accent:#4bc0c8; --card:#15243b; --muted:#d0e4ff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+    a{color:#9ed6ff;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:92%;max-width:1180px;margin:auto}
+
+    /* NAV */
+    .nav-wrap{position:sticky;top:0;background:rgba(15,28,46,.9);backdrop-filter:blur(6px);z-index:50;border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:300px;height:150px;object-fit:contain}
+    .brand span{font-weight:700;letter-spacing:.3px}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu > li{list-style:none;position:relative}
+    .menu > li > a{padding:10px 12px;border-radius:8px;display:inline-block;color:var(--ink)}
+    .menu > li > a:hover{background:rgba(255,255,255,.06)}
+    .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+    .hamburger span{width:24px;height:2px;background:#fff}
+    @media (max-width: 980px){
+      .menu{
+        display:none; position:absolute; left:0; right:0; top:64px;
+        background:#0f1c2e; flex-direction:column; padding:14px;
+        border-top:1px solid rgba(255,255,255,.1);
+        max-height: calc(100vh - 64px);
+        overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+      }
+      .menu.open{display:flex}
+      .menu > li{width:100%}
+      .menu > li > a{display:block;width:100%}
+      .hamburger{display:flex}
+    }
+
+    /* DOC BANNER */
+    .doc-banner{background:linear-gradient(90deg,var(--brand),#58d4f3); color:#001425}
+    .doc-banner .inner{width:92%;max-width:1180px;margin:auto;padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .doc-banner a{color:#001425;font-weight:700;background:#ffffff;border-radius:10px;padding:8px 12px;text-decoration:none}
+    .doc-banner a:hover{filter:brightness(0.95)}
+
+    /* HERO */
+    .hero{padding:40px 0 18px;text-align:center}
+    .hero h1{font-size:34px;margin:8px 0;color:var(--brand)}
+    .hero p.lead{opacity:.9;max-width:880px;margin:8px auto 0}
+    .hero .cta-row{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;background:var(--brand);padding:12px 18px;border-radius:10px;font-weight:700}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.18)}
+    .btn:hover{filter:brightness(1.05)}
+
+    /* SECTION TITLES */
+    h2{color:var(--accent);margin:28px 0 8px;font-size:24px;text-align:left}
+    h3{color:var(--brand);margin:10px 0 6px;font-size:18px}
+
+    /* PROGRAM GRID */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px}
+    .card p{color:var(--muted);margin:6px 0 0;font-size:15px}
+    .pill{display:inline-block;background:rgba(255,255,255,.08);padding:2px 8px;border-radius:999px;font-size:13px;margin-right:6px}
+
+    /* INFO BLOCKS */
+    .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:8px}
+    .paper{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+    ul{margin:6px 0 10px 18px}
+    li{color:var(--muted)}
+
+    /* CTA STRIP */
+    .cta-strip{margin:34px 0;background:linear-gradient(90deg, var(--brand), #58d4f3);padding:22px;border-radius:14px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
+    .cta-strip strong{font-size:18px;text-align:left}
+
+    /* FOOTER */
+    footer{margin:36px 0 22px;opacity:.7;font-size:14px}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="/"><img src="/esg-1as-logo.png" alt="Aiducate Logo"/><span>ESG-</span></a>
+      <div class="hamburger" id="hamburger" aria-label="Mở menu"><span></span><span></span><span></span></div>
+      <ul class="menu" id="menu">
+        <li><a href="/about.html">Giới thiệu</a></li>
+        <li><a href="/tools/index.html">Công cụ AI</a></li>
+        <li><a href="/career/index.html">Cơ hội & Nghề nghiệp</a></li>
+        <li><a href="/blog/index.html">Học tập & Phát triển</a></li>
+        <li><a href="/community/index.html">Cộng đồng</a></li>
+        <li><a class="btn" style="padding:8px 12px" href="/support/">Trợ giúp</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DOC BANNER -->
+  <div class="doc-banner">
+    <div class="inner">
+      <div><strong>Tài liệu dự án đang triển khai:</strong> Chi tiết 7 bootcamp, yêu cầu & đầu ra, địa điểm thực tế.</div>
+      <a href="/docs/esg-1as-bootcamp-report.pdf" target="_blank" rel="noopener">Xem tài liệu</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero container">
+    <h1>Bootcamp Nghề nghiệp: Vừa học – Vừa làm – Có chứng nhận</h1>
+    <p class="lead">Tham gia team 8 người để thực hành thực tế: livestream bán hàng, vận hành social commerce, sản xuất short video, quản trị kênh social, đến dự án phim điện ảnh. Hoàn thành có <strong>chứng nhận số</strong> gắn QR tra cứu cho nhà tuyển dụng.</p>
+    <div class="cta-row">
+      <a class="btn" href="#dang-ky">Đăng ký tham gia</a>
+      <a class="btn secondary" href="#chuong-trinh">Xem các chương trình</a>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section id="chuong-trinh" class="container">
+    <h2>🎯 Danh mục Bootcamp</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1) Vận hành Livestream TikTok</h3>
+        <span class="pill">Social Commerce</span><span class="pill">OBS/Studio</span>
+        <p>Setup seller/giỏ hàng, KV/khuyến mãi, kịch bản & xử lý tình huống; triển khai live thật, đọc KPI: view, tương tác, tỉ lệ chốt đơn.</p>
+      </div>
+      <div class="card">
+        <h3>2) Vận hành Livestream Shopee</h3>
+        <span class="pill">Shopee Live</span><span class="pill">Campaign</span>
+        <p>Hiểu cơ chế Shopee Live, live chéo Shopee–TikTok, bám chiến dịch giảm giá, theo dõi KPI đơn hàng & retention.</p>
+      </div>
+      <div class="card">
+        <h3>3) Sản xuất Short Video TikTok</h3>
+        <span class="pill">CapCut</span><span class="pill">Content Pillar</span>
+        <p>Từ ý tưởng → quay → dựng 5–10 clip/ngày; storytelling, unbox/review, video hệ chuyên gia; phân tích view & completion rate.</p>
+      </div>
+      <div class="card">
+        <h3>4) Sản xuất Short Video Facebook</h3>
+        <span class="pill">Facebook Reels</span><span class="pill">Viral</span>
+        <p>Tối ưu định dạng Reels, sản xuất 10–20 video/đợt; tối ưu reach tự nhiên, share & engagement.</p>
+      </div>
+      <div class="card">
+        <h3>5) Social Content – Kênh Facebook</h3>
+        <span class="pill">Kế hoạch tháng</span><span class="pill">Ads KPI</span>
+        <p>Xây & quản lý fanpage, lập content pillar, sản xuất 15–60 post; dùng AI tạo nội dung; theo dõi CPM/CPC/CPL & chạy ads theo ngân sách.</p>
+      </div>
+      <div class="card">
+        <h3>6) Social Content – Kênh TikTok</h3>
+        <span class="pill">Niche</span><span class="pill">Growth</span>
+        <p>Quản lý kênh TikTok theo niche, sản xuất 12–30 video, chạy ads, theo dõi follower growth, viral rate, live traffic & doanh thu.</p>
+      </div>
+      <div class="card">
+        <h3>7) Sản xuất phim điện ảnh</h3>
+        <span class="pill">1977 Project</span><span class="pill">Prod Assistant</span>
+        <p>Tham gia dự án phim thực tế với 1-AllStars, học quy trình sản xuất, lập lịch/thời gian, dự toán cơ bản & xử lý hợp đồng nhân sự.</p>
+      </div>
+    </div>
+    <p style="color:var(--muted);margin-top:10px">Nội dung chi tiết xem tại tài liệu chính thức ở đầu trang.</p>
+  </section>
+
+  <!-- INFO -->
+  <section class="container">
+    <h2>📍 Địa điểm thực tế</h2>
+    <div class="info">
+      <div class="paper">
+        <h3>Kho 1-AllStars – gần T3 TSN</h3>
+        <p>13 Nguyễn Quang Bích, Q. Tân Bình, TP.HCM</p>
+      </div>
+      <div class="paper">
+        <h3>Văn phòng 1-AllStars</h3>
+        <p>343 Phạm Ngũ Lão, Phường Phạm Ngũ Lão, TP.HCM</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>🎁 Bạn nhận được gì?</h2>
+    <div class="info">
+      <div class="paper">
+        <h3>Kinh nghiệm thực chiến</h3>
+        <ul>
+          <li>Thực hành với doanh nghiệp thật, KPI thật.</li>
+          <li>Làm việc nhóm 8 người, có mentor hướng dẫn.</li>
+        </ul>
+      </div>
+      <div class="paper">
+        <h3>Chứng nhận số & hồ sơ</h3>
+        <ul>
+          <li>Hoàn thành sẽ có <strong>chứng nhận số</strong> gắn QR xác thực.</li>
+          <li>Hồ sơ dự án, link video, KPI đính kèm để nộp nhà tuyển dụng.</li>
+        </ul>
+      </div>
+      <div class="paper">
+        <h3>Kết nối cơ hội</h3>
+        <ul>
+          <li>Mở rộng network với doanh nghiệp/đoàn phim.</li>
+          <li>Cơ hội thực tập/part-time/offer sau bootcamp.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section id="dang-ky" class="container">
+    <h2>📝 Cách đăng ký</h2>
+    <div class="paper">
+      <ol style="margin-left:18px">
+        <li>Chọn 1 trong 7 bootcamp phù hợp (xem phần trên hoặc tài liệu).</li>
+        <li>Chuẩn bị link CV ngắn/gist kỹ năng & động lực tham gia.</li>
+        <li>Đăng ký theo form (đính kèm ở tài liệu) – chọn thời gian phù hợp.</li>
+        <li>Nhận email xác nhận & lịch phỏng vấn/điều phối nhóm.</li>
+      </ol>
+      <div style="margin-top:12px">
+        <a class="btn" href="/docs/bootcamp_projects.pdf" target="_blank" rel="noopener">Mở tài liệu & form đăng ký</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container">
+    <h2>❓ Câu hỏi thường gặp</h2>
+    <div class="info">
+      <div class="paper">
+        <h3>Thời lượng & lịch?</h3>
+        <p>Tùy dự án & doanh nghiệp. Lịch sẽ được điều phối để không trùng lịch học – chi tiết xem trong tài liệu.</p>
+      </div>
+      <div class="paper">
+        <h3>Có cần thiết bị đặc biệt?</h3>
+        <p>Đa số dùng điện thoại + phần mềm phổ biến (CapCut/OBS). Nếu cần máy ảnh/studio sẽ có hướng dẫn chung.</p>
+      </div>
+      <div class="paper">
+        <h3>Tiêu chí xét chọn?</h3>
+        <p>Động lực học hỏi, cam kết thời gian, tinh thần teamwork. Không yêu cầu kinh nghiệm trước.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="container cta-strip">
+    <strong>Sẵn sàng “vừa học – vừa làm” và có chứng nhận số cho hồ sơ?</strong>
+    <a class="btn" href="#dang-ky" style="background:#103a63;">Đăng ký Bootcamp</a>
+  </div>
+
+  <footer class="container">
+    © Aiducate.net • “Bình dân học vụ AI” • <a href="/">Trang chủ</a> • <a href="/legal/privacy.html">Chính sách bảo mật</a> • <a href="/legal/terms.html">Điều khoản</a>
+  </footer>
+
+  <script>
+    // Toggle mobile menu
+    const burger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    burger.addEventListener('click', () => menu.classList.toggle('open'));
+  </script>
+</body>
+</html>
