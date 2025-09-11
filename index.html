@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aiducate.net – Bình dân học vụ AI</title>
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" />
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{
@@ -17,11 +15,11 @@
     a{color:inherit;text-decoration:none}
     .container{width:92%;max-width:1180px;margin:auto}
 
-    /* HEADER / NAV */
+    /* NAV */
     .nav-wrap{position:sticky;top:0;background:rgba(15,28,46,.9);backdrop-filter:blur(6px);z-index:50;border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:10px}
-    .brand img{width:120px;height:120px;object-fit:contain}
+    .brand img{width:40px;height:40px;object-fit:contain}
     .brand span{font-weight:700;letter-spacing:.3px}
     .menu{display:flex;gap:18px;align-items:center}
     .menu > li{list-style:none;position:relative}
@@ -39,66 +37,60 @@
     .hamburger span{width:24px;height:2px;background:#fff}
     @media (max-width: 980px){
       .menu{
-        display:none;
-        position:absolute;left:0;right:0;top:64px;
-        background:#0f1c2e;
-        flex-direction:column;
-        padding:14px;
+        display:none; position:absolute; left:0; right:0; top:64px;
+        background:#0f1c2e; flex-direction:column; padding:14px;
         border-top:1px solid rgba(255,255,255,.1);
-        /* --- FIX: scrollable & stable submenu --- */
         max-height: calc(100vh - 64px);
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
+        overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
       }
       .menu.open{display:flex}
-      /* Mỗi mục menu chiếm full width để submenu xuống hàng đúng */
       .menu > li{width:100%}
       .menu > li > a{display:block;width:100%}
-
-      /* Submenu hiển thị theo cột, không chồng chéo */
-      .dropdown{
-        position:static;
-        display:block;
-        border:none;
-        box-shadow:none;
-        background:transparent;
-        padding:0;
-        margin:4px 0 8px 0;
-      }
-      .dropdown a{
-        display:block;
-        width:100%;
-        padding:10px 14px 10px 30px;  /* thụt vào để phân cấp */
-        border-bottom:1px solid rgba(255,255,255,.06);
-        white-space: normal;          /* cho phép xuống dòng */
-        word-break: break-word;       /* tránh tràn chữ dài */
-        line-height: 1.5;
-      }
+      .dropdown{position:static;display:block;border:none;box-shadow:none;background:transparent;padding:0;margin:4px 0 8px}
+      .dropdown a{padding:10px 14px 10px 30px;white-space:normal;word-break:break-word;line-height:1.5;border-bottom:1px solid rgba(255,255,255,.06)}
       .dropdown a:last-child{border-bottom:none}
       .hamburger{display:flex}
     }
 
     /* HERO */
-    .hero{padding:56px 0 24px;text-align:center}
-    .hero h1{font-size:34px;margin:10px 0;color:var(--brand)}
-    .hero p.lead{opacity:.9;max-width:820px;margin:10px auto 0}
-    .hero .cta{margin-top:18px;display:inline-block;background:var(--brand);padding:14px 20px;border-radius:10px;font-weight:700}
-    .hero .cta:hover{filter:brightness(1.05)}
-    .hero img.hero-img{width:100%;max-width:760px;margin:22px auto;border-radius:14px;display:block}
+    .hero{padding:40px 0 18px;text-align:center}
+    .hero h1{font-size:34px;margin:8px 0;color:var(--brand)}
+    .hero p.lead{opacity:.9;max-width:880px;margin:8px auto 0}
+    .hero .cta-row{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;background:var(--brand);padding:12px 18px;border-radius:10px;font-weight:700}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.18)}
+    .btn:hover{filter:brightness(1.05)}
+    .hero img.hero-img{width:100%;max-width:760px;margin:22px auto 0;border-radius:14px;display:block}
 
-    /* SECTIONS */
-    h2.section-title{color:var(--accent);margin:28px 0 8px;font-size:26px}
-    .bullets ul{margin:12px 0 0 0;padding-left:20px}
-    .bullets li{margin:8px 0}
+    /* QUICK NEEDS */
+    .needs{margin:22px 0 8px}
+    .needs h2{color:var(--accent);font-size:24px;margin:0 0 10px}
+    .need-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .need{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px}
+    .need h3{margin:4px 0 6px;font-size:18px;color:var(--brand)}
+    .need p{margin:0;color:var(--muted);font-size:15px}
 
     /* TOOL CARDS */
-    .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:16px}
+    h2.section-title{color:var(--accent);margin:28px 0 8px;font-size:24px}
+    .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:12px}
     .tool-card{background:var(--card);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.06)}
     .tool-card h3{margin:6px 0 8px;color:var(--brand);font-size:18px}
     .tool-card p{margin:0 0 12px;color:var(--muted);font-size:15px}
     .tool-card a{display:inline-block;background:var(--brand);padding:10px 14px;border-radius:8px;font-weight:600}
     .tool-card a.secondary{background:transparent;border:1px solid rgba(255,255,255,.15)}
+
+    /* HOW IT WORKS */
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .step{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px}
+    .step .num{display:inline-block;background:rgba(255,255,255,.08);padding:4px 10px;border-radius:999px;margin-bottom:6px}
+    .step h4{margin:4px 0 6px;color:var(--brand)}
+    .step p{margin:0;color:var(--muted)}
+
+    /* BLOG */
+    .blog-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .blog-card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px}
+    .blog-card h3{margin:6px 0 8px;color:var(--brand);font-size:18px}
+    .blog-card p{margin:0;color:var(--muted);font-size:15px}
 
     /* CTA STRIP */
     .cta-strip{margin:34px 0;background:linear-gradient(90deg, var(--brand), #58d4f3);padding:22px;border-radius:14px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
@@ -125,34 +117,34 @@
         <li><a href="/about.html">Giới thiệu</a></li>
 
         <li>
-          <a href="/Tools/index.html">Công cụ AI ▾</a>
+          <a href="/tools/index.html">Công cụ AI ▾</a>
           <div class="dropdown">
-            <a href="/Tools/essay-writer.html">✍️ Công cụ viết luận và chấm bài luận </a>
-            <a href="/Tools/cvcv-reviewer.html">📝 Công cụ Chấm điểm CV </a>
-            <a href="https://mi-test.aiducate.net">📄 Test tính cách, trí thông minh chọn nghề</a>
-            <a href="/Tools/salary-checker.html">📊 Tra cứu mức lương theo ngành nghề </a>
+            <a href="/tools/essay-writer.html">✍️ Công cụ viết luận & chấm bài luận</a>
+            <a href="/tools/cv-reviewer.html">📝 Công cụ chấm điểm CV</a>
+            <a href="https://mi-test.aiducate.net">📄 Test tính cách – đa trí thông minh</a>
+            <a href="/tools/salary-checker.html">📊 Tra cứu mức lương theo ngành</a>
             <a href="https://learn.aiducate.net">🎓 Khóa học kỹ năng số, kỹ năng mềm</a>
           </div>
         </li>
 
         <li>
-          <a href="/career/index.html"> Cơ hội thực tập & kiếm tiền ▾</a>
+          <a href="/career/index.html">Cơ hội & Nghề nghiệp ▾</a>
           <div class="dropdown">
-            <a href="/career/earning_startups.html">🧠 Cơ hội kiếm tiền & khởi nghiệp </a>
-            <a href="/career/Promotions_scholars.html">🎯 Thông tin khuyến mãi, học bổng</a>
-            <a href="/pages/LP_1AS_co_hoi_nghe_nghiep.html">🧳 Thông tin Thực tập, Việc làm</a>
-            <a href="/career/Courses.html">🗂️ Khóa học nâng cao kỹ năng </a>
+            <a href="/career/internships-jobs.html">🧳 Thực tập – Việc làm</a>
+            <a href="/career/earning-startups.html">💡 Kiếm tiền & khởi nghiệp</a>
+            <a href="/career/promotions-scholars.html">🎯 Ưu đãi – Học bổng</a>
+            <a href="/career/courses.html">🗂️ Khóa học nâng cao kỹ năng</a>
             <a href="/verify/index.html">🎓 Tra cứu chứng nhận thực tập</a>
           </div>
         </li>
 
         <li>
-          <a href="/blog/index.html">Blog Học tập & Phát triển ▾</a>
+          <a href="/blog/index.html">Học tập & Phát triển ▾</a>
           <div class="dropdown">
-            <a href="/blog/High_score_essay.html">✍️ Viết luận điểm cao</a>
-            <a href="/blog/career_orientation.html">🧭 Chọn nghề & hướng nghiệp</a>
-            <a href="/blog/startup-money.html">💡 Khởi nghiệp & kiếm tiền</a>
-            <a href="/blog/relax-travel.html">🧠 Góc giải trí và du lịch</a>
+            <a href="/blog/high-score-essay.html">✍️ Viết luận điểm cao</a>
+            <a href="/blog/career.html">🧭 Hướng nghiệp – chọn nghề</a>
+            <a href="/blog/startup-money.html">💰 Khởi nghiệp & kiếm tiền</a>
+            <a href="/blog/relax-travel.html">🎒 Giải trí & du lịch</a>
           </div>
         </li>
 
@@ -166,20 +158,35 @@
   <!-- HERO -->
   <section class="hero container">
     <h1>Bình dân học vụ AI cho sinh viên bận rộn</h1>
-    <p class="lead">Viết luận thông minh – học nhẹ nhàng – điểm cao hơn. Công cụ AI & nội dung micro-learning giúp bạn cải thiện nhanh kỹ năng học thuật và nghề nghiệp.</p>
-    <a class="cta" href="/tools/essay-writer.html">✍️ Bắt đầu với công cụ Viết luận</a>
+    <p class="lead">Một cổng duy nhất để học kỹ năng số – viết luận đạt điểm cao – định hướng nghề nghiệp – tìm cơ hội thực tập & kiếm thêm thu nhập.</p>
+    <div class="cta-row">
+      <a class="btn" href="/tools/essay-writer.html">✍️ Bắt đầu viết luận</a>
+      <a class="btn secondary" href="/tools/index.html">Khám phá bộ công cụ AI</a>
+    </div>
     <img class="hero-img" src="/images/Deadline_student.png" alt="Sinh viên áp lực deadline" />
   </section>
 
-  <!-- PAIN POINTS -->
-  <section class="container bullets">
-    <h2 class="section-title">❗ Bạn có đang rơi vào những tình huống này?</h2>
-    <ul>
-      <li>⏰ Lịch học và làm thêm kín mít, không đủ thời gian viết bài luận</li>
-      <li>🧠 Viết theo cảm tính, chưa có phương pháp rõ ràng</li>
-      <li>🔍 Góp nhặt thông tin từ Google nhưng bài thiếu logic</li>
-      <li>🤖 Dùng ChatGPT nhưng không biết prompt, nội dung sai lệch</li>
-    </ul>
+  <!-- QUICK NEEDS -->
+  <section class="container needs">
+    <h2>👉 Bạn cần gì hôm nay?</h2>
+    <div class="need-grid">
+      <a class="need" href="/tools/essay-writer.html">
+        <h3>Viết & chấm bài luận</h3>
+        <p>Gợi ý dàn ý, soạn đoạn, chấm điểm & góp ý tự động.</p>
+      </a>
+      <a class="need" href="https://mi-test.aiducate.net">
+        <h3>Test tính cách – đa trí thông minh</h3>
+        <p>Khám phá bản thân & khớp ngành nghề phù hợp.</p>
+      </a>
+      <a class="need" href="/tools/cv-reviewer.html">
+        <h3>Đánh giá & góp ý CV</h3>
+        <p>Nhận điểm số & gợi ý chỉnh sửa để nổi bật.</p>
+      </a>
+      <a class="need" href="/career/internships-jobs.html">
+        <h3>Thực tập – Việc làm</h3>
+        <p>Cơ hội phù hợp kèm chứng nhận số sau hoàn thành.</p>
+      </a>
+    </div>
   </section>
 
   <!-- TOOLS -->
@@ -194,12 +201,12 @@
       </div>
       <div class="tool-card">
         <h3>🧠 Trắc nghiệm hướng nghiệp</h3>
-        <p>Khám phá sở trường và nghề phù hợp.</p>
+        <p>Khám phá sở trường & nghề phù hợp.</p>
         <a href="https://mi-test.aiducate.net">Làm test ngay</a>
       </div>
       <div class="tool-card">
         <h3>🤖 Bình dân học vụ AI</h3>
-        <p>Micro-learning các công cụ AI cho sinh viên.</p>
+        <p>Micro-learning kỹ năng số & công cụ AI.</p>
         <a href="https://learn.aiducate.net">Vào học</a>
       </div>
       <div class="tool-card">
@@ -209,16 +216,57 @@
       </div>
       <div class="tool-card">
         <h3>🔍 Tra cứu mức lương</h3>
-        <p>Dữ liệu thị trường theo ngành nghề & vị trí.</p>
+        <p>Dữ liệu thị trường theo vị trí & ngành.</p>
         <a href="/tools/salary-checker.html">Khám phá</a>
       </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="container" style="margin-top:26px">
+    <h2 class="section-title">⚡ Bắt đầu trong 3 bước</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="num">Bước 1</span>
+        <h4>Chọn nhu cầu</h4>
+        <p>Viết luận, test hướng nghiệp, chấm CV hay tìm thực tập.</p>
+      </div>
+      <div class="step">
+        <span class="num">Bước 2</span>
+        <h4>Dùng công cụ AI</h4>
+        <p>Gợi ý dàn ý, chấm điểm, góp ý – không cần biết prompt.</p>
+      </div>
+      <div class="step">
+        <span class="num">Bước 3</span>
+        <h4>Nâng kỹ năng mỗi ngày</h4>
+        <p>Học micro-learning & theo dõi tiến bộ qua dashboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG HIGHLIGHTS -->
+  <section class="container" style="margin-top:26px">
+    <h2 class="section-title">📝 Bài viết mới</h2>
+    <div class="blog-list">
+      <a class="blog-card" href="/blog/high-score-essay.html">
+        <h3>Vì sao viết luận luôn là “ác mộng” – và cách phá băng</h3>
+        <p>Mẹo lên ý tưởng, dàn ý, tránh lỗi bị trừ điểm & tận dụng AI đúng cách.</p>
+      </a>
+      <a class="blog-card" href="/blog/career.html">
+        <h3>Chọn ngành – chọn nghề: bắt đầu từ bản thân</h3>
+        <p>Áp dụng test đa thông minh & hành trình học – làm phù hợp.</p>
+      </a>
+      <a class="blog-card" href="/blog/startup-money.html">
+        <h3>Làm thêm thông minh: làm để học, không chỉ để có tiền</h3>
+        <p>Những công việc “2 trong 1” giúp bạn vừa có thu nhập vừa tăng kỹ năng.</p>
+      </a>
     </div>
   </section>
 
   <!-- CTA STRIP -->
   <div class="container cta-strip">
     <strong>✅ Hãy để AI đồng hành cùng bạn trong học tập!</strong>
-    <a class="cta" href="/tools/essay-writer.html" style="background:#103a63;border-radius:10px;padding:12px 16px;">Dùng thử miễn phí</a>
+    <a class="btn" href="/tools/essay-writer.html" style="background:#103a63;">Dùng thử miễn phí</a>
   </div>
 
   <footer class="container">
